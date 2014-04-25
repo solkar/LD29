@@ -18,7 +18,6 @@
 		1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB09180E9839004C840B /* libcocos2dx-extensions iOS.a */; };
 		1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB0F180E9839004C840B /* libCocosDenshion iOS.a */; };
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B916D35E4900DB1158 /* CloseNormal.png */; };
 		1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
@@ -36,7 +35,6 @@
 		5087E75417EB910900C73F5D /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */; };
 		5087E75517EB910900C73F5D /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */; };
 		5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
-		5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5087E76517EB910900C73F5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		5087E76717EB910900C73F5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -69,6 +67,34 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */; };
+		D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */; };
+		D8A0DECE190AC88B00B57683 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DECC190AC88B00B57683 /* MainMenu.cpp */; };
+		D8A0DECF190AC88B00B57683 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DECC190AC88B00B57683 /* MainMenu.cpp */; };
+		D8A0DED2190ACCD700B57683 /* clickme-down.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED0190ACCD700B57683 /* clickme-down.png */; };
+		D8A0DED3190ACCD700B57683 /* clickme-down.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED0190ACCD700B57683 /* clickme-down.png */; };
+		D8A0DED4190ACCD700B57683 /* clickme.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED1190ACCD700B57683 /* clickme.png */; };
+		D8A0DED5190ACCD800B57683 /* clickme.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED1190ACCD700B57683 /* clickme.png */; };
+		D8A0DED9190ACED800B57683 /* btn-test-0.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED6190ACED800B57683 /* btn-test-0.png */; };
+		D8A0DEDA190ACED800B57683 /* btn-test-0.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED6190ACED800B57683 /* btn-test-0.png */; };
+		D8A0DEDB190ACED800B57683 /* btn-test-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED7190ACED800B57683 /* btn-test-1.png */; };
+		D8A0DEDC190ACED800B57683 /* btn-test-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED7190ACED800B57683 /* btn-test-1.png */; };
+		D8A0DEDD190ACED800B57683 /* btn-test-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED8190ACED800B57683 /* btn-test-2.png */; };
+		D8A0DEDE190ACED900B57683 /* btn-test-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DED8190ACED800B57683 /* btn-test-2.png */; };
+		D8A0DEE3190AD55400B57683 /* minecraftia-48.fnt in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE1190AD55400B57683 /* minecraftia-48.fnt */; };
+		D8A0DEE4190AD55400B57683 /* minecraftia-48.fnt in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE1190AD55400B57683 /* minecraftia-48.fnt */; };
+		D8A0DEE5190AD55400B57683 /* minecraftia-48.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE2190AD55400B57683 /* minecraftia-48.png */; };
+		D8A0DEE6190AD55400B57683 /* minecraftia-48.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE2190AD55400B57683 /* minecraftia-48.png */; };
+		D8A0DEE9190AD57800B57683 /* HudLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */; };
+		D8A0DEEA190AD57800B57683 /* HudLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */; };
+		D8A0DEEB190AD57800B57683 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE8190AD57800B57683 /* MainScene.ccbi */; };
+		D8A0DEEC190AD57800B57683 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE8190AD57800B57683 /* MainScene.ccbi */; };
+		D8A0DEEF190AD5D200B57683 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEED190AD5D200B57683 /* MainScene.cpp */; };
+		D8A0DEF0190AD5D200B57683 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEED190AD5D200B57683 /* MainScene.cpp */; };
+		D8A0DEF6190AE02F00B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
+		D8A0DEF7190AE03000B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
+		D8A0DEF9190AE3D700B57683 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEF8190AE3D700B57683 /* coin.png */; };
+		D8A0DEFA190AE3D700B57683 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEF8190AE3D700B57683 /* coin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,8 +245,6 @@
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8B416D35DE700DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1AFAF8B916D35E4900DB1158 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
 		1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
@@ -267,6 +291,24 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainMenu.ccbi; sourceTree = "<group>"; };
+		D8A0DECC190AC88B00B57683 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
+		D8A0DECD190AC88B00B57683 /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MainMenu.hpp; path = ../Classes/MainMenu.hpp; sourceTree = "<group>"; };
+		D8A0DED0190ACCD700B57683 /* clickme-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clickme-down.png"; sourceTree = "<group>"; };
+		D8A0DED1190ACCD700B57683 /* clickme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickme.png; sourceTree = "<group>"; };
+		D8A0DED6190ACED800B57683 /* btn-test-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-test-0.png"; sourceTree = "<group>"; };
+		D8A0DED7190ACED800B57683 /* btn-test-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-test-1.png"; sourceTree = "<group>"; };
+		D8A0DED8190ACED800B57683 /* btn-test-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-test-2.png"; sourceTree = "<group>"; };
+		D8A0DEE1190AD55400B57683 /* minecraftia-48.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraftia-48.fnt"; sourceTree = "<group>"; };
+		D8A0DEE2190AD55400B57683 /* minecraftia-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minecraftia-48.png"; sourceTree = "<group>"; };
+		D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = HudLayer.ccbi; sourceTree = "<group>"; };
+		D8A0DEE8190AD57800B57683 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
+		D8A0DEED190AD5D200B57683 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
+		D8A0DEEE190AD5D200B57683 /* MainScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MainScene.hpp; path = ../Classes/MainScene.hpp; sourceTree = "<group>"; };
+		D8A0DEF1190AD68000B57683 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = ../Classes/Macros.h; sourceTree = "<group>"; };
+		D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HudLayer.cpp; path = ../Classes/HudLayer.cpp; sourceTree = "<group>"; };
+		D8A0DEF5190AE02F00B57683 /* HudLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = HudLayer.hpp; path = ../Classes/HudLayer.hpp; sourceTree = "<group>"; };
+		D8A0DEF8190AE3D700B57683 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,10 +378,15 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */,
+				D8A0DEF5190AE02F00B57683 /* HudLayer.hpp */,
+				D8A0DEED190AD5D200B57683 /* MainScene.cpp */,
+				D8A0DEEE190AD5D200B57683 /* MainScene.hpp */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
-				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
+				D8A0DECC190AC88B00B57683 /* MainMenu.cpp */,
+				D8A0DECD190AC88B00B57683 /* MainMenu.hpp */,
+				D8A0DEF1190AD68000B57683 /* Macros.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -455,12 +502,31 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8A0DEF8190AE3D700B57683 /* coin.png */,
+				D8A0DEE1190AD55400B57683 /* minecraftia-48.fnt */,
+				D8A0DEE2190AD55400B57683 /* minecraftia-48.png */,
+				D8A0DED6190ACED800B57683 /* btn-test-0.png */,
+				D8A0DED7190ACED800B57683 /* btn-test-1.png */,
+				D8A0DED8190ACED800B57683 /* btn-test-2.png */,
+				D8A0DED0190ACCD700B57683 /* clickme-down.png */,
+				D8A0DED1190ACCD700B57683 /* clickme.png */,
+				D8A0DEC4190AC66D00B57683 /* CCB */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		D8A0DEC4190AC66D00B57683 /* CCB */ = {
+			isa = PBXGroup;
+			children = (
+				D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */,
+				D8A0DEE8190AD57800B57683 /* MainScene.ccbi */,
+				D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */,
+			);
+			path = CCB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,12 +693,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A0DEDB190ACED800B57683 /* btn-test-1.png in Resources */,
+				D8A0DED9190ACED800B57683 /* btn-test-0.png in Resources */,
+				D8A0DEE9190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				D8A0DEE3190AD55400B57683 /* minecraftia-48.fnt in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				D8A0DEE5190AD55400B57683 /* minecraftia-48.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				D8A0DED2190ACCD700B57683 /* clickme-down.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
@@ -643,7 +715,12 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */,
+				D8A0DED4190ACCD700B57683 /* clickme.png in Resources */,
+				D8A0DEEB190AD57800B57683 /* MainScene.ccbi in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				D8A0DEF9190AE3D700B57683 /* coin.png in Resources */,
+				D8A0DEDD190ACED800B57683 /* btn-test-2.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -653,10 +730,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A0DEEA190AD57800B57683 /* HudLayer.ccbi in Resources */,
+				D8A0DED3190ACCD700B57683 /* clickme-down.png in Resources */,
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
+				D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */,
+				D8A0DEDC190ACED800B57683 /* btn-test-1.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				D8A0DEEC190AD57800B57683 /* MainScene.ccbi in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
+				D8A0DED5190ACCD800B57683 /* clickme.png in Resources */,
+				D8A0DEE4190AD55400B57683 /* minecraftia-48.fnt in Resources */,
+				D8A0DEDE190ACED900B57683 /* btn-test-2.png in Resources */,
+				D8A0DEFA190AE3D700B57683 /* coin.png in Resources */,
+				D8A0DEE6190AD55400B57683 /* minecraftia-48.png in Resources */,
 				5087E75517EB910900C73F5D /* HelloWorld.png in Resources */,
+				D8A0DEDA190ACED800B57683 /* btn-test-0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,11 +755,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A0DEF6190AE02F00B57683 /* HudLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				D8A0DECE190AC88B00B57683 /* MainMenu.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
+				D8A0DEEF190AD5D200B57683 /* MainScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,8 +770,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
-				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
+				D8A0DEF0190AD5D200B57683 /* MainScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				D8A0DEF7190AE03000B57683 /* HudLayer.cpp in Sources */,
+				D8A0DECF190AC88B00B57683 /* MainMenu.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
