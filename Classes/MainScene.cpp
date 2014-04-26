@@ -1,4 +1,4 @@
-//
+
 //  MainScene.cpp
 //  LD29
 //
@@ -26,7 +26,7 @@ Scene* MainScene::createScene()
     
     /* Create an autorelease CCBReader. */
     cocosbuilder::CCBReader * ccbReader = new cocosbuilder::CCBReader(ccNodeLoaderLibrary);
-    ccbReader->autorelease();
+//    ccbReader->autorelease();
     
     /* Read a ccbi file. */
     auto node = ccbReader->readNodeGraphFromFile("MainScene.ccbi");
@@ -36,7 +36,7 @@ Scene* MainScene::createScene()
         scene->addChild(node);
     }
     
-//    ccbReader->release();
+    ccbReader->release();
     
     return scene;
 }
@@ -53,6 +53,10 @@ MainScene::~MainScene()
 
 void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * nodeLoader) {
     
+    // load init map
+    this->loadMap( "ego-level1" );
+    
+
 //    this->scheduleUpdate();
 }
 
@@ -79,3 +83,50 @@ void MainScene::update( float dt )
 //    GameManager::getInstance()->getMissionFsm()->update( dt );
     
 }
+
+#pragma mark - Map
+void MainScene::loadMap( std::string name)
+{
+    // clean previos map, if any
+    if( mTileMap )
+    {
+        mTileMap->removeAllChildrenWithCleanup(true);
+        removeChild( mTileMap, true );
+        mTileMap = NULL;
+    }
+    
+    name = name.append(".tmx");
+    
+    // get map
+    mTileMap = TMXTiledMap::create( name );
+    assert( mTileMap != nullptr );
+    mTileMap->setAnchorPoint(Point(0,0));
+    addChild(mTileMap, zMap); // hero is 0
+    mTileSize = mTileMap->getTileSize().width;
+    
+    Size CC_UNUSED s = mTileMap->getContentSize();
+    CCLOG("ContentSize: %f, %f", s.width,s.height);
+    
+    // save group data with the doors between maps: exits
+    mExitObject = mTileMap->getObjectGroup("exits");
+    assert(mExitObject != nullptr);
+    // save spawn point positions, in "objects" group
+    ValueMap dict = mExitObject->getObject("spawn");
+    
+    
+    // get values and make a Point
+    float x = dict["x"].asFloat();
+    float y = dict["y"].asFloat();
+    float width = dict["width"].asFloat();
+    float height = dict["height"].asFloat();
+    
+    mSpawnPoint = Point( x + width * 0.5, y + height * 0.5 );
+    
+    // save meta layer data
+    mMetaLayer = mTileMap->getLayer("meta");
+    mMetaLayer->setVisible( false );
+    assert(mMetaLayer != nullptr);
+    
+    
+}
+

@@ -14,6 +14,11 @@
 #include "extensions/cocos-ext.h"
 #include "cocosbuilder/CocosBuilder.h"
 
+enum{
+    zMap = -1,
+    zHero,
+    zHud,
+};
 
 class MainSceneLoader;
 
@@ -55,6 +60,12 @@ private:
     
     virtual void update( float dt );
     
+    void loadMap( std::string name );
+    cocos2d::TMXTiledMap * mTileMap;
+    cocos2d::TMXLayer *mMetaLayer;
+    float mTileSize;
+    cocos2d::TMXObjectGroup *mExitObject;
+    cocos2d::Point mSpawnPoint;
     
     
 };

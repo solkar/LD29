@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="8" height="8" tilewidth="96" tileheight="48">
+ <tileset firstgid="1" name="thick tile-96x144" tilewidth="96" tileheight="144">
+  <image source="thick tile-96x144.png" width="96" height="144"/>
+ </tileset>
+ <tileset firstgid="2" name="meta-tiles" tilewidth="96" tileheight="48">
+  <image source="meta-tiles.png" width="96" height="144"/>
+ </tileset>
+ <tileset firstgid="5" name="characters-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
+  <image source="characters-tileset.png" width="512" height="512"/>
+ </tileset>
+ <layer name="floor" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzBGAAhgABB
+  </data>
+ </layer>
+ <layer name="meta" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjZAAABAAAB
+  </data>
+ </layer>
+ <layer name="characters" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBj8gJ+GZgMABmQAEA==
+  </data>
+ </layer>
+</map>
