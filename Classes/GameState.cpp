@@ -80,14 +80,14 @@ void GameState::restartGame()
 
 //void GameState::setGameFsm( GameFSM *ptr ) { mGameFsm = ptr; }
 
-//cocos2d::TMXLayer* GameState::getPersistentMapData( std::string mapName)
-//{
-//    return m_mLayerData.at( mapName );
-//}
-//void GameState::setPersistentMapData( std::string mapName, cocos2d::TMXLayer* layer )
-//{
-//    m_mLayerData.insert( mapName , layer );
-//}
+cocos2d::TMXLayer* GameState::getPersistentLayerData(const std::string& layerName)
+{
+    return m_mLayerData.at( layerName );
+}
+void GameState::setPersistentLayerData( const std::string& layerName, cocos2d::TMXLayer* layer )
+{
+    m_mLayerData.insert( layerName , layer );
+}
 
 cocos2d::TMXTiledMap* GameState::getPersistentMapData(const std::string& mapName)
 {

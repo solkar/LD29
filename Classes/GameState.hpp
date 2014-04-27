@@ -30,8 +30,9 @@ public:
     void resetGame();
     void restartGame();
     
-    //cocos2d::TMXLayer* getPersistentMapData( std::string );
-    //void setPersistentMapData( std::string, cocos2d::TMXLayer* );
+    cocos2d::TMXLayer* getPersistentLayerData( const std::string& );
+    void setPersistentLayerData( const std::string& layerName, cocos2d::TMXLayer* );
+
     cocos2d::TMXTiledMap* getPersistentMapData( const std::string& mapName );
     void setPersistentMapData( const std::string& mapName, cocos2d::TMXTiledMap* map  );
     

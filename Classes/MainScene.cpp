@@ -10,6 +10,7 @@
 #include "HudLayer.hpp"
 #include "GameFSM.hpp"
 #include "GameState.hpp"
+#include "Macros.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -120,9 +121,19 @@ void MainScene::loadMap( std::string name)
     // clean previos map, if any
     if( mTileMap )
     {
-        // save old layer data
+        
+
+        // save old map data
         auto mapName = mTileMap->getProperty("name").asString();
         GameState::getInstance()->setPersistentMapData(mapName, mTileMap);
+
+        //save character layer in ego level
+        if( mapName.compare("ego-level1") == 0 )
+        {
+            auto layer = mTileMap->getLayer("characters");
+            GameState::getInstance()->setPersistentLayerData("ego-character", layer );
+
+        }
         
         // Don't clean up, we want persistent data
         // clean up and load new
@@ -176,8 +187,28 @@ void MainScene::loadMap( std::string name)
         //mCharacterLayer = mTileMap->getLayer("characters"); // load form file
     //}
     
-
-    mCharacterLayer = mTileMap->getLayer("characters"); // load form file
+    // Id level, load character from Ego level
+    if(mTileMap->getProperty("name").asString().compare("id-level1") != 0 )
+    {
+        mCharacterLayer = mTileMap->getLayer("characters"); // load this layer
+    }else{
+        /** reuse layer **/
+//        // load layer from memory
+//        mCharacterLayer = GameState::getInstance()->getPersistentLayerData("ego-character"); // load memory, shared with ego level
+//
+//        // replace layer in Id for the one in Ego
+//        if( mCharacterLayer != nullptr){
+//            mTileMap->removeChild(mTileMap->getLayer("characters"));
+//            mTileMap->addChild(mCharacterLayer );
+//        }
+        
+        /** duplicate layer properties **/
+         mCharacterLayer = mTileMap->getLayer("characters"); // load from TileMap
+        
+        // get layer from ego level
+        auto egoLayer = GameState::getInstance()->getPersistentLayerData("ego-character");
+        this->copyGID( egoLayer , mCharacterLayer );
+    }
 
     // save meta layer data
     mMetaLayer = mTileMap->getLayer("meta");
@@ -220,6 +251,14 @@ bool MainScene::tileIsCollidable( Point tile )
     int tileGid = mMetaLayer->getTileGIDAt(tile);
     if (tileGid) {
         auto collision = mTileMap->getPropertiesForGID(tileGid).asValueMap()["collidable"].asString();
+        if ( collision.compare("true") == 0 ) {
+            return true;
+        }
+    }
+    
+    int cTileGid = mCharacterLayer->getTileGIDAt(tile);
+    if (cTileGid) {
+        auto collision = mTileMap->getPropertiesForGID(cTileGid).asValueMap()["collidable"].asString();
         if ( collision.compare("true") == 0 ) {
             return true;
         }
@@ -369,6 +408,33 @@ void MainScene::swapGID( TMXLayer* layer, Point oldTile, Point newTile )
         auto newGID = layer->getTileGIDAt( newTile );
         mCharacterLayer->setTileGID( oldGID , newTile ); // update value on new tile
         mCharacterLayer->setTileGID( newGID , oldTile ); //erase old tile
+}
+
+/**
+ * Copies rock origin layer (at Ego level) into the same tile at destination
+ * layer (at Id level)
+ */
+void MainScene::copyGID( TMXLayer* originLayer, TMXLayer* destinationLayer )
+{
+    
+    for (int i = 0; i < mTileMap->getMapSize().width; i++) {
+        for (int j = 0; j < mTileMap->getMapSize().height; j++) {
+            // remove old rocks in target layer
+            auto destinationData = destinationLayer->getTileGIDAt(Point(i,j));
+            if( destinationData == GID_ROCK ){
+                destinationLayer->setTileGID(GID_EMPTY, Point(i, j));
+            }
+
+            
+            // read from origin layer and update
+            auto originData = originLayer->getTileGIDAt(Point( i, j));
+            if( originData == GID_ROCK){
+                destinationLayer->setTileGID(GID_ROCK, Point(i, j));
+            }
+        }
+
+    }
+        
 }
 
 #pragma mark - Controls

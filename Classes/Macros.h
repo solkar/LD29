@@ -15,4 +15,7 @@
 
 #define NO_MUSIC
 
+#define GID_ROCK 12 // Second tileset
+#define GID_EMPTY 0 
+
 #endif

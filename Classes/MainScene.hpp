@@ -66,6 +66,7 @@ public:
 
     bool tileHasProperty( Point tile, const std::string property , TMXLayer* layer);
     void swapGID( TMXLayer* layer, Point oldTile, Point newTile );
+    void copyGID( TMXLayer* originLayer, TMXLayer* destinationLayer );
     
     Sprite* getHero();
     void loadMap( std::string name );
