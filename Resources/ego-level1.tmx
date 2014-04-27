@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="96" tileheight="48">
+ <properties>
+  <property name="name" value="ego-level1"/>
+ </properties>
  <tileset firstgid="1" name="thick tile-96x144" tilewidth="96" tileheight="144">
   <image source="thick tile-96x144.png" width="96" height="144"/>
  </tileset>

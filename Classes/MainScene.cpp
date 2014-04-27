@@ -9,6 +9,7 @@
 #include "MainScene.hpp"
 #include "HudLayer.hpp"
 #include "GameFSM.hpp"
+#include "GameState.hpp"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -114,18 +115,34 @@ void MainScene::update( float dt )
 #pragma mark - TileMap
 void MainScene::loadMap( std::string name)
 {
+   
+    
     // clean previos map, if any
     if( mTileMap )
     {
-        mTileMap->removeAllChildrenWithCleanup(true);
+        // save old layer data
+        auto mapName = mTileMap->getProperty("name").asString();
+        GameState::getInstance()->setPersistentMapData(mapName, mTileMap);
+        
+        // Don't clean up, we want persistent data
+        // clean up and load new
+//        mTileMap->removeAllChildrenWithCleanup(true);
         removeChild( mTileMap, true );
         mTileMap = NULL;
+        
     }
     
-    name = name.append(".tmx");
+    // load map from memory, or file
+    mTileMap = GameState::getInstance()->getPersistentMapData(name);
+    if( mTileMap == nullptr)
+    {
+        // load form file
+        name = name.append(".tmx");
+        mTileMap = TMXTiledMap::create( name );
+    }
     
-    // get map
-    mTileMap = TMXTiledMap::create( name );
+    // get map from file
+    //mTileMap = TMXTiledMap::create( name );
     assert( mTileMap != nullptr );
     mTileMap->setAnchorPoint(Point(0,0));
     addChild(mTileMap, zMap); // hero is 0
@@ -152,8 +169,16 @@ void MainScene::loadMap( std::string name)
         mSpawnPoint = Point( x + width * 0.5, y + height * 0.5 );
     }
     
-    mCharacterLayer = mTileMap->getLayer("characters");
+    // load layer from memory
+    //mCharacterLayer = GameState::getInstance()->getPersistentMapData(mTileMap->getProperty("name").asString());
+    //if( mCharacterLayer == nullptr)
+    //{
+        //mCharacterLayer = mTileMap->getLayer("characters"); // load form file
+    //}
     
+
+    mCharacterLayer = mTileMap->getLayer("characters"); // load form file
+
     // save meta layer data
     mMetaLayer = mTileMap->getLayer("meta");
     mMetaLayer->setVisible( false );
@@ -270,8 +295,9 @@ bool MainScene::tileIsBlockedMobile( Point tile )
         // shift position of the mobile sprite
         auto shiftAction = Sequence::create(
                 MoveBy::create(0.4, 
-                               positionForTileCoord(nextTile)- positionForTileCoord(tile)),
-                            CallFunc::create( CC_CALLBACK_0( MainScene::swapGID, this,  mCharacterLayer, tile, nextTile)),
+                    positionForTileCoord(nextTile)- positionForTileCoord(tile)),
+                CallFunc::create( 
+                    CC_CALLBACK_0( MainScene::swapGID, this,  mCharacterLayer, tile, nextTile)),
                 NULL);
         
 

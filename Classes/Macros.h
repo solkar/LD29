@@ -13,5 +13,6 @@
 #define frandom (float)arc4random()/UINT64_C(0x100000000)
 #define frandom_range(low,high) ((high-low)*frandom)+low
 
+#define NO_MUSIC
 
 #endif
