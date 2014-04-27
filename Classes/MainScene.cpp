@@ -188,6 +188,14 @@ Point MainScene::positionForTileCoord(Point map) {
 
 bool MainScene::tileIsCollidable( Point tile )
 {
+    int tileGid = mMetaLayer->getTileGIDAt(tile);
+    if (tileGid) {
+        auto collision = mTileMap->getPropertiesForGID(tileGid).asValueMap()["collidable"].asString();
+        if ( collision.compare("true") == 0 ) {
+            return true;
+        }
+    }
+
     return false;
 }
 #pragma mark - Controls

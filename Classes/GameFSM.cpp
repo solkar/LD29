@@ -143,6 +143,7 @@ void GameFSM::checkCollision( Point playerPos )
     if( mGameLayer->tileIsCollidable( tileCoord ) ){
         m_pBrain->popState();
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
+        return;
     }
     
     m_pBrain->popState();  
