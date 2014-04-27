@@ -20,6 +20,8 @@ enum{
     zHud,
 };
 
+USING_NS_CC;
+
 class MainSceneLoader;
 
 /*
@@ -63,10 +65,15 @@ private:
     void loadMap( std::string name );
     cocos2d::TMXTiledMap * mTileMap;
     cocos2d::TMXLayer *mMetaLayer;
-    float mTileSize;
+    cocos2d::Size mTileSize;
     cocos2d::TMXObjectGroup *mExitObject;
     cocos2d::Point mSpawnPoint;
     
+    cocos2d::Sprite* mHero;
+    
+    // tilemap helpers
+    Point tileCoordForPosition(Point position);
+    Point positionForTileCoord(Point position);
     
 };
 

@@ -54,8 +54,22 @@ MainScene::~MainScene()
 void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * nodeLoader) {
     
     // load init map
+    mTileMap = nullptr;
     this->loadMap( "ego-level1" );
     
+    Point spawnCell = Point( 8 , 1 );
+    
+    // load player avatar
+    mHero = Sprite::createWithSpriteFrameName("4-player-l.png");
+    assert( mHero != nullptr );
+    mHero->setPosition( this->positionForTileCoord( spawnCell ) ); //hero initial position
+    mHero->setZOrder(0);
+    mHero->setAnchorPoint( Point( 0.5 , 0 ) ) ;
+    this->addChild( mHero, zHero ); 
+
+    Point cell = tileCoordForPosition( mHero->getPosition() );
+    CCLOG("Cell is %f:%f %f:%f", spawnCell.x, cell.x, spawnCell.y, cell.y );
+    assert( cell.x == spawnCell.x && cell.y == spawnCell.y );
 
 //    this->scheduleUpdate();
 }
@@ -84,7 +98,7 @@ void MainScene::update( float dt )
     
 }
 
-#pragma mark - Map
+#pragma mark - TileMap
 void MainScene::loadMap( std::string name)
 {
     // clean previos map, if any
@@ -102,7 +116,7 @@ void MainScene::loadMap( std::string name)
     assert( mTileMap != nullptr );
     mTileMap->setAnchorPoint(Point(0,0));
     addChild(mTileMap, zMap); // hero is 0
-    mTileSize = mTileMap->getTileSize().width;
+    mTileSize = mTileMap->getTileSize();
     
     Size CC_UNUSED s = mTileMap->getContentSize();
     CCLOG("ContentSize: %f, %f", s.width,s.height);
@@ -130,3 +144,31 @@ void MainScene::loadMap( std::string name)
     
 }
 
+Point MainScene::tileCoordForPosition(Point position) {
+
+    float screenX = position.x - mTileMap->getMapSize().width * mTileSize.width * 0.5;
+    float screenY = mTileMap->getMapSize().height * mTileSize.height - position.y;
+    float TILE_WIDTH_HALF = mTileSize.width * 0.5;
+    float TILE_HEIGHT_HALF = mTileSize.height * 0.5;
+
+    int x = (screenX / TILE_WIDTH_HALF + screenY / TILE_HEIGHT_HALF) /2 - 1; // first pixel is 0
+    int y = (screenY / TILE_HEIGHT_HALF -(screenX / TILE_WIDTH_HALF)) /2 - 1; // first pixel is 0
+    return Point(x, y);
+}
+
+
+/**
+ * Given a tile coordinate, returns the position on screen
+ */
+Point MainScene::positionForTileCoord(Point map) {
+
+    float TILE_WIDTH_HALF = mTileSize.width * 0.5;
+    float TILE_HEIGHT_HALF = mTileSize.height * 0.5;
+    
+    Point screen;
+    screen.x = (map.x - map.y) * TILE_WIDTH_HALF + mTileMap->getMapSize().width * mTileSize.width * 0.5;
+    screen.y = mTileMap->getMapSize().height * mTileSize.height - (map.x + map.y + 2) * TILE_HEIGHT_HALF ;
+
+    
+    return screen;
+}
