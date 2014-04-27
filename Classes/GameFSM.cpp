@@ -146,6 +146,15 @@ void GameFSM::checkCollision( Point playerPos )
         return;
     }
 
+    if( mGameLayer->tileIsBlockedMobile( tileCoord ) )
+    {
+        // mobile is blocked player can't go on
+        m_pBrain->popState();
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
+        return;
+
+    }
+
     if( mGameLayer->tileIsExit( tileCoord ) ){
 
         std::string destinationMap = this->mGameLayer->getMapNameForExitInTile( tileCoord );

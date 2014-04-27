@@ -61,7 +61,11 @@ public:
     Point positionForTileCoord(Point position);
     bool tileIsCollidable( Point tile );
     bool tileIsExit( Point tile );
+    bool tileIsBlockedMobile( Point tile );
     std::string getMapNameForExitInTile( Point tile );
+
+    bool tileHasProperty( Point tile, const std::string property , TMXLayer* layer);
+    void swapGID( TMXLayer* layer, Point oldTile, Point newTile );
     
     Sprite* getHero();
     void loadMap( std::string name );
@@ -74,6 +78,7 @@ private:
     
     cocos2d::TMXTiledMap * mTileMap;
     cocos2d::TMXLayer *mMetaLayer;
+    cocos2d::TMXLayer *mCharacterLayer;
     cocos2d::Size mTileSize;
     cocos2d::TMXObjectGroup *mExitObject;
     cocos2d::Point mSpawnPoint;

@@ -152,6 +152,8 @@ void MainScene::loadMap( std::string name)
         mSpawnPoint = Point( x + width * 0.5, y + height * 0.5 );
     }
     
+    mCharacterLayer = mTileMap->getLayer("characters");
+    
     // save meta layer data
     mMetaLayer = mTileMap->getLayer("meta");
     mMetaLayer->setVisible( false );
@@ -237,6 +239,66 @@ bool MainScene::tileIsExit( Point tile )
     return false;
 }
 
+/**
+ * Check if there's a mobile object 
+ * and move it if possible
+ */
+bool MainScene::tileIsBlockedMobile( Point tile )
+{
+
+    // detect mobile presence
+    if( this->tileHasProperty( tile, "mobile", mCharacterLayer ) == false )
+        return false;
+    
+
+    //
+    // decide is the mobile can move in the desired direction
+    // get movement direction
+    Point currentTile = this->tileCoordForPosition(mHero->getPosition() );
+    Point nextTile = tile + tile - currentTile;
+    // check next tile is empty 
+    bool isNextTileFull = tileIsCollidable( nextTile );
+
+    if(isNextTileFull){
+        
+        return true;
+    }else{
+        
+        Sprite *mobileObject = mCharacterLayer->getTileAt(tile);
+        //mobileObject->setAnchorPoint( Point( 0.5,0 ));
+        
+        // shift position of the mobile sprite
+        auto shiftAction = Sequence::create(
+                MoveBy::create(0.4, 
+                               positionForTileCoord(nextTile)- positionForTileCoord(tile)),
+                            CallFunc::create( CC_CALLBACK_0( MainScene::swapGID, this,  mCharacterLayer, tile, nextTile)),
+                NULL);
+        
+
+        mobileObject->runAction( shiftAction );
+        
+
+        
+        return false;
+    }
+
+
+
+}
+
+bool MainScene::tileHasProperty( Point tile , const std::string propertyName, TMXLayer* layer)
+{
+    
+    int tileGid = layer->getTileGIDAt(tile);
+    if (tileGid) {
+        auto property = mTileMap->getPropertiesForGID(tileGid).asValueMap()[propertyName].asString();
+        if ( property.compare("true") == 0 ) {
+            return true;
+        }
+    }
+
+}
+
 std::string MainScene::getMapNameForExitInTile( Point tile )
 {
     assert(mExitObject != nullptr);
@@ -267,9 +329,22 @@ std::string MainScene::getMapNameForExitInTile( Point tile )
         }
 
     }
-        return "id-level1";
 
-        }
+    return "";
+
+}
+
+
+
+void MainScene::swapGID( TMXLayer* layer, Point oldTile, Point newTile )
+{
+        // swap tile Gid info
+        auto oldGID = layer->getTileGIDAt( oldTile );
+        auto newGID = layer->getTileGIDAt( newTile );
+        mCharacterLayer->setTileGID( oldGID , newTile ); // update value on new tile
+        mCharacterLayer->setTileGID( newGID , oldTile ); //erase old tile
+}
+
 #pragma mark - Controls
 void MainScene::initTouchControl()
 {
