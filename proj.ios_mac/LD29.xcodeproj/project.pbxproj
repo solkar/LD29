@@ -91,6 +91,10 @@
 		D8A0DEF0190AD5D200B57683 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEED190AD5D200B57683 /* MainScene.cpp */; };
 		D8A0DEF6190AE02F00B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
 		D8A0DEF7190AE03000B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
+		D8B1436A190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
+		D8B1436B190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
+		D8B1436C190CBF1700387CD7 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14368190CBF1700387CD7 /* FSM.cpp */; };
+		D8B1436D190CBF1700387CD7 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14368190CBF1700387CD7 /* FSM.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +307,10 @@
 		D8A0DEF1190AD68000B57683 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = ../Classes/Macros.h; sourceTree = "<group>"; };
 		D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HudLayer.cpp; path = ../Classes/HudLayer.cpp; sourceTree = "<group>"; };
 		D8A0DEF5190AE02F00B57683 /* HudLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = HudLayer.hpp; path = ../Classes/HudLayer.hpp; sourceTree = "<group>"; };
+		D8B14366190CBF1700387CD7 /* GameFSM.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameFSM.hpp; sourceTree = "<group>"; };
+		D8B14367190CBF1700387CD7 /* GameFSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameFSM.cpp; sourceTree = "<group>"; };
+		D8B14368190CBF1700387CD7 /* FSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSM.cpp; sourceTree = "<group>"; };
+		D8B14369190CBF1700387CD7 /* FSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSM.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +380,10 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8B14366190CBF1700387CD7 /* GameFSM.hpp */,
+				D8B14367190CBF1700387CD7 /* GameFSM.cpp */,
+				D8B14368190CBF1700387CD7 /* FSM.cpp */,
+				D8B14369190CBF1700387CD7 /* FSM.h */,
 				D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */,
 				D8A0DEF5190AE02F00B57683 /* HudLayer.hpp */,
 				D8A0DEED190AD5D200B57683 /* MainScene.cpp */,
@@ -743,6 +755,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B1436C190CBF1700387CD7 /* FSM.cpp in Sources */,
 				D8A0DEF6190AE02F00B57683 /* HudLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				D8A0DECE190AC88B00B57683 /* MainMenu.cpp in Sources */,
@@ -750,6 +763,7 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				D8A0DEEF190AD5D200B57683 /* MainScene.cpp in Sources */,
+				D8B1436A190CBF1700387CD7 /* GameFSM.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,9 +772,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
+				D8B1436B190CBF1700387CD7 /* GameFSM.cpp in Sources */,
 				D8A0DEF0190AD5D200B57683 /* MainScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				D8A0DEF7190AE03000B57683 /* HudLayer.cpp in Sources */,
+				D8B1436D190CBF1700387CD7 /* FSM.cpp in Sources */,
 				D8A0DECF190AC88B00B57683 /* MainMenu.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

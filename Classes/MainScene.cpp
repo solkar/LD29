@@ -8,6 +8,7 @@
 
 #include "MainScene.hpp"
 #include "HudLayer.hpp"
+#include "GameFSM.hpp"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -52,6 +53,13 @@ MainScene::~MainScene()
 
 
 void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * nodeLoader) {
+
+    // game FSM
+    mGameFsm = GameFSM::create();
+    mGameFsm->setGameLayer( this );
+
+    // init touch/mouse input
+    this->initTouchControl();
     
     // load init map
     mTileMap = nullptr;
@@ -71,7 +79,7 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
     CCLOG("Cell is %f:%f %f:%f", spawnCell.x, cell.x, spawnCell.y, cell.y );
     assert( cell.x == spawnCell.x && cell.y == spawnCell.y );
 
-//    this->scheduleUpdate();
+    this->scheduleUpdate();
 }
 
 
@@ -90,11 +98,16 @@ bool MainScene::onAssignCCBMemberVariable(Ref * pTarget, const char * pMemberVar
 
 
 
+Sprite* MainScene::getHero()
+{
+    assert( mHero != nullptr );
+    return mHero; 
+};
 #pragma mark - Loop
 void MainScene::update( float dt )
 {
     
-//    GameManager::getInstance()->getMissionFsm()->update( dt );
+    mGameFsm->update( dt );
     
 }
 
@@ -171,4 +184,35 @@ Point MainScene::positionForTileCoord(Point map) {
 
     
     return screen;
+}
+
+bool MainScene::tileIsCollidable( Point tile )
+{
+    return false;
+}
+#pragma mark - Controls
+void MainScene::initTouchControl()
+{
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = CC_CALLBACK_2(MainScene::onTouchBegan, this);
+    listener->onTouchEnded = CC_CALLBACK_2(MainScene::onTouchEnded, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+}
+bool MainScene::onTouchBegan(Touch* touch, Event  *event)
+{
+    return true;
+}
+
+void MainScene::onTouchEnded(Touch* touch, Event  *event)
+{
+
+    auto touchLocation = touch->getLocation();
+    //    touchLocation = Director::getInstance()->convertToGL(touchLocation);
+    touchLocation = this->convertToNodeSpace(touchLocation);
+
+    mGameFsm->onPlayerInput( touchLocation , mHero->getPosition(), mTileSize );
+
+
+
+
 }

@@ -23,6 +23,7 @@ enum{
 USING_NS_CC;
 
 class MainSceneLoader;
+class GameFSM;
 
 /*
  * Note: for some pretty hard fucked up reason, the order of inheritance is important!
@@ -55,10 +56,15 @@ public:
     virtual bool onAssignCCBMemberVariable(cocos2d::Ref * pTarget, const char * pMemberVariableName, cocos2d::Node * node);
     virtual void onNodeLoaded(cocos2d::Node * node, cocosbuilder::NodeLoader * nodeLoader);
     
+    // tilemap helpers
+    Point tileCoordForPosition(Point position);
+    Point positionForTileCoord(Point position);
+    bool tileIsCollidable( Point tile );
     
+    Sprite* getHero();
 private:
     
-    void onPlayButton(Ref * sender, cocos2d::extension::Control::EventType pControlEvent);
+    void initTouchControl();
     
     virtual void update( float dt );
     
@@ -71,9 +77,11 @@ private:
     
     cocos2d::Sprite* mHero;
     
-    // tilemap helpers
-    Point tileCoordForPosition(Point position);
-    Point positionForTileCoord(Point position);
+
+    bool onTouchBegan(Touch* touch, Event  *event);
+    void onTouchEnded(Touch* touch, Event  *event);
+
+    GameFSM *mGameFsm;
     
 };
 
