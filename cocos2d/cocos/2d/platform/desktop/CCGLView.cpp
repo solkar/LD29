@@ -287,7 +287,8 @@ GLView::~GLView()
 GLView* GLView::create(const std::string& viewName)
 {
     auto ret = new GLView;
-    if(ret && ret->initWithRect(viewName, Rect(0, 0, 960, 640), 1)) {
+    //if(ret && ret->initWithRect(viewName, Rect(0, 0, 960, 640), 1)) {
+    if(ret && ret->initWithRect(viewName, Rect(0, 0, 1024, 768), 1)) {
         ret->autorelease();
         return ret;
     }

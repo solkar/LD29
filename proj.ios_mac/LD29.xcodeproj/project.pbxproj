@@ -95,6 +95,10 @@
 		D8B1436B190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
 		D8B1436C190CBF1700387CD7 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14368190CBF1700387CD7 /* FSM.cpp */; };
 		D8B1436D190CBF1700387CD7 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14368190CBF1700387CD7 /* FSM.cpp */; };
+		D8B14376190CEEEA00387CD7 /* slab-tileset.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8B14373190CEEE900387CD7 /* slab-tileset.plist */; };
+		D8B14377190CEEEA00387CD7 /* slab-tileset.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8B14373190CEEE900387CD7 /* slab-tileset.plist */; };
+		D8B14379190CEF3200387CD7 /* slab-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B14378190CEF3200387CD7 /* slab-tileset.png */; };
+		D8B1437A190CEF3200387CD7 /* slab-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B14378190CEF3200387CD7 /* slab-tileset.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -311,6 +315,8 @@
 		D8B14367190CBF1700387CD7 /* GameFSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameFSM.cpp; sourceTree = "<group>"; };
 		D8B14368190CBF1700387CD7 /* FSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSM.cpp; sourceTree = "<group>"; };
 		D8B14369190CBF1700387CD7 /* FSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSM.h; sourceTree = "<group>"; };
+		D8B14373190CEEE900387CD7 /* slab-tileset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "slab-tileset.plist"; sourceTree = "<group>"; };
+		D8B14378190CEF3200387CD7 /* slab-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slab-tileset.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,6 +514,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8B14378190CEF3200387CD7 /* slab-tileset.png */,
+				D8B14373190CEEE900387CD7 /* slab-tileset.plist */,
 				D80CC6FA190C3410000272B9 /* thick tile-96x144.png */,
 				D80CC6F3190C2F48000272B9 /* 04b-48.fnt */,
 				D80CC6F4190C2F48000272B9 /* 04b-48.png */,
@@ -709,7 +717,9 @@
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				D80CC6F7190C2F48000272B9 /* 04b-48.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				D8B14376190CEEEA00387CD7 /* slab-tileset.plist in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				D8B14379190CEF3200387CD7 /* slab-tileset.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				D80CC6E7190C2F07000272B9 /* characters-tileset.png in Resources */,
@@ -744,7 +754,9 @@
 				D8A0DEEC190AD57800B57683 /* MainScene.ccbi in Resources */,
 				D80CC6F0190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
 				D80CC6F6190C2F48000272B9 /* 04b-48.fnt in Resources */,
+				D8B14377190CEEEA00387CD7 /* slab-tileset.plist in Resources */,
 				D80CC6EC190C2F07000272B9 /* id-level1.tmx in Resources */,
+				D8B1437A190CEF3200387CD7 /* slab-tileset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

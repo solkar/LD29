@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="isometric" width="8" height="8" tilewidth="96" tileheight="48">
- <tileset firstgid="1" name="thick tile-96x144" tilewidth="96" tileheight="144">
-  <image source="thick tile-96x144.png" width="96" height="144"/>
- </tileset>
- <tileset firstgid="2" name="meta-tiles" tilewidth="96" tileheight="48">
+<map version="1.0" orientation="isometric" width="10" height="10" tilewidth="96" tileheight="48">
+ <tileset firstgid="1" name="meta-tiles" tilewidth="96" tileheight="48">
   <image source="meta-tiles.png" width="96" height="144"/>
   <tile id="1">
    <properties>
@@ -11,17 +8,41 @@
    </properties>
   </tile>
  </tileset>
- <layer name="floor" width="8" height="8">
+ <tileset firstgid="4" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
+  <image source="slab-tileset.png" width="128" height="512"/>
+ </tileset>
+ <tileset firstgid="7" name="characters-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
+  <image source="characters-tileset.png" width="512" height="512"/>
+ </tileset>
+ <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYBzBGAAhgABB
+   eJxjYCAesBHAyOrwmUGseaxkmEctdSwkmkdMuBADALGcANY=
   </data>
  </layer>
- <layer name="meta" width="8" height="8">
+ <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYMAPWAjI4wJMZOqjNwAABdAABw==
+   eJxjYGBgYGKgLmAmQg0+Oxmp5RA6AGLCjgmNxgcADMgADw==
   </data>
  </layer>
- <objectgroup name="exits" width="8" height="8">
-  <object x="0" y="336" width="48" height="48"/>
+ <layer name="characters" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFyIB3gO0HAAgQAA4=
+  </data>
+ </layer>
+ <objectgroup name="exits" width="10" height="10">
+  <object name="exit" type="toEgo" x="384" y="144" width="48" height="48">
+   <properties>
+    <property name="destination" value="ego-level1"/>
+    <property name="startx" value="1"/>
+    <property name="starty" value="1"/>
+   </properties>
+  </object>
+  <object name="exit" type="toEgo" x="48" y="336" width="48" height="48">
+   <properties>
+    <property name="destination" value="ego-level1"/>
+    <property name="startx" value="1"/>
+    <property name="starty" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -145,8 +145,20 @@ void GameFSM::checkCollision( Point playerPos )
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
         return;
     }
+
+    if( mGameLayer->tileIsExit( tileCoord ) ){
+
+        std::string destinationMap = this->mGameLayer->getMapNameForExitInTile( tileCoord );
+
+        m_pBrain->popState();
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState, this ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::loadMap , this, destinationMap ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::movePlayerAction , this , playerPos ) );
+        return;
+    }
     
-    m_pBrain->popState();  
+    m_pBrain->popState();
+    m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState, this ) );
     m_pBrain->pushState( CC_CALLBACK_0( GameFSM::movePlayerAction , this , playerPos ) );
 
 }
@@ -173,7 +185,16 @@ void GameFSM::movePlayerAction( Point screenPosition )
        }
     
 
+    //   finished
+    m_pBrain->popState();
+}
+
+void GameFSM::loadMap(const std::string mapName )
+{
+    CCLOG("[FSM] load map");
+    
+    this->mGameLayer->loadMap(mapName);
+    
     // forward to idle state
     m_pBrain->popState();
-    m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
 }

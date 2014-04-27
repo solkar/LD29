@@ -60,15 +60,18 @@ public:
     Point tileCoordForPosition(Point position);
     Point positionForTileCoord(Point position);
     bool tileIsCollidable( Point tile );
+    bool tileIsExit( Point tile );
+    std::string getMapNameForExitInTile( Point tile );
     
     Sprite* getHero();
+    void loadMap( std::string name );
 private:
     
     void initTouchControl();
     
     virtual void update( float dt );
     
-    void loadMap( std::string name );
+    
     cocos2d::TMXTiledMap * mTileMap;
     cocos2d::TMXLayer *mMetaLayer;
     cocos2d::Size mTileSize;

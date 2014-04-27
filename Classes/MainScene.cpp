@@ -136,18 +136,21 @@ void MainScene::loadMap( std::string name)
     
     // save group data with the doors between maps: exits
     mExitObject = mTileMap->getObjectGroup("exits");
-    assert(mExitObject != nullptr);
-    // save spawn point positions, in "objects" group
-    ValueMap dict = mExitObject->getObject("spawn");
-    
-    
-    // get values and make a Point
-    float x = dict["x"].asFloat();
-    float y = dict["y"].asFloat();
-    float width = dict["width"].asFloat();
-    float height = dict["height"].asFloat();
-    
-    mSpawnPoint = Point( x + width * 0.5, y + height * 0.5 );
+    if( mExitObject != nullptr)
+    {
+        // save spawn point positions, in "objects" group
+        ValueMap dict = mExitObject->getObject("spawn");
+        
+        
+        
+        // get values and make a Point
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+        
+        mSpawnPoint = Point( x + width * 0.5, y + height * 0.5 );
+    }
     
     // save meta layer data
     mMetaLayer = mTileMap->getLayer("meta");
@@ -168,7 +171,6 @@ Point MainScene::tileCoordForPosition(Point position) {
     int y = (screenY / TILE_HEIGHT_HALF -(screenX / TILE_WIDTH_HALF)) /2 - 1; // first pixel is 0
     return Point(x, y);
 }
-
 
 /**
  * Given a tile coordinate, returns the position on screen
@@ -198,6 +200,76 @@ bool MainScene::tileIsCollidable( Point tile )
 
     return false;
 }
+
+bool MainScene::tileIsExit( Point tile )
+{
+    assert(mExitObject != nullptr);
+    
+    Point testPos = this->positionForTileCoord( tile );
+
+    //Check if player ended up in an exit tile
+    auto &exits = mExitObject->getObjects();
+    for (auto& exit : exits)
+    {
+        ValueMap& dict = exit.asValueMap();
+        
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+        
+        int posx = x / width;
+        int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
+        Point nonIsoCoor = Point(posx, posy);
+        
+        Point exitTile = this->tileCoordForPosition(Point(x, y));
+        
+        if (nonIsoCoor == tile) {
+            auto name = dict["destination"].asString();
+            Point heroPos = this->positionForTileCoord( Point( dict["startx"].asFloat() ,
+                                  dict["starty"].asFloat() ) );
+            
+            return true;
+        }
+
+    }
+    
+    return false;
+}
+
+std::string MainScene::getMapNameForExitInTile( Point tile )
+{
+    assert(mExitObject != nullptr);
+    
+    //Check if player ended up in an exit tile
+    auto &exits = mExitObject->getObjects();
+    for (auto& exit : exits)
+    {
+        ValueMap& dict = exit.asValueMap();
+        
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+        
+        int posx = x / width;
+        int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
+        Point nonIsoCoor = Point(posx, posy);
+        
+        Point exitTile = this->tileCoordForPosition(Point(x, y));
+        
+        if (nonIsoCoor == tile) {
+            auto name = dict["destination"].asString();
+            //Point heroPos = this->positionForTileCoord( Point( dict["startx"].asFloat() ,
+                                  //dict["starty"].asFloat() ) );
+            
+            return name;
+        }
+
+    }
+        return "id-level1";
+
+        }
 #pragma mark - Controls
 void MainScene::initTouchControl()
 {
