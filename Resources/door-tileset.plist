@@ -4,174 +4,161 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>1-down slab-l.png</key>
+            <key>door-closed-ego-l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{96,144}}</string>
+                <string>{{2,2},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>1-down slab-r.png</key>
+            <key>door-closed-ego-r.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,2},{96,144}}</string>
+                <string>{{196,2},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>2-thick tile-96x144.png</key>
+            <key>door-closed-id-l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,2},{96,144}}</string>
+                <string>{{390,2},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-black.png</key>
+            <key>door-closed-id-r.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,2},{96,144}}</string>
+                <string>{{584,2},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-cyan.png</key>
+            <key>door-closed-superego-l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,2},{96,144}}</string>
+                <string>{{778,2},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-green.png</key>
+            <key>door-closed-superego-r.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,148},{96,144}}</string>
+                <string>{{2,292},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-grey.png</key>
+            <key>door-ego-l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,148},{96,144}}</string>
+                <string>{{196,292},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-magenta.png</key>
+            <key>door-ego-r.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{198,148},{96,144}}</string>
+                <string>{{390,292},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-purple.png</key>
+            <key>door-id-l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{296,148},{96,144}}</string>
+                <string>{{584,292},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-red.png</key>
+            <key>door-id-r.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{394,148},{96,144}}</string>
+                <string>{{778,292},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-switch-off.png</key>
+            <key>door-superego-l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,294},{96,144}}</string>
+                <string>{{2,582},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
-            <key>slab-switch-on.png</key>
+            <key>door-superego-r.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{100,294},{96,144}}</string>
+                <string>{{196,582},{192,288}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
+                <string>{{0,0},{192,288}}</string>
                 <key>sourceSize</key>
-                <string>{96,144}</string>
-            </dict>
-            <key>slab-white.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{198,294},{96,144}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{96,144}}</string>
-                <key>sourceSize</key>
-                <string>{96,144}</string>
+                <string>{192,288}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -179,13 +166,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>slab-tileset.png</string>
+            <string>door-tileset.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{1024,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2ce2106f34a53743d982dbb9fee1b20e:46a6a9e744e87539f947a83555ec840d:23498510c3cf349d52dae7499633b8fe$</string>
+            <string>$TexturePacker:SmartUpdate:106d597c58d81ed98b976f548da95c09:7d8fca10ef365aeb62e22ab841b1d4f8:2d5c87a9dfda1e6555585642376980d7$</string>
             <key>textureFileName</key>
-            <string>slab-tileset.png</string>
+            <string>door-tileset.png</string>
         </dict>
     </dict>
 </plist>

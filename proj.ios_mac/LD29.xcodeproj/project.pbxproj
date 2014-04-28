@@ -79,6 +79,14 @@
 		D80CC6F8190C2F48000272B9 /* 04b-48.png in Resources */ = {isa = PBXBuildFile; fileRef = D80CC6F4190C2F48000272B9 /* 04b-48.png */; };
 		D80CC6FB190C3410000272B9 /* thick tile-96x144.png in Resources */ = {isa = PBXBuildFile; fileRef = D80CC6FA190C3410000272B9 /* thick tile-96x144.png */; };
 		D80CC6FC190C3410000272B9 /* thick tile-96x144.png in Resources */ = {isa = PBXBuildFile; fileRef = D80CC6FA190C3410000272B9 /* thick tile-96x144.png */; };
+		D86500C9190E9C7300016980 /* gameover1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C7190E9C7300016980 /* gameover1.tmx */; };
+		D86500CA190E9C7300016980 /* gameover1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C7190E9C7300016980 /* gameover1.tmx */; };
+		D86500CB190E9C7300016980 /* gameover2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C8190E9C7300016980 /* gameover2.tmx */; };
+		D86500CC190E9C7300016980 /* gameover2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C8190E9C7300016980 /* gameover2.tmx */; };
+		D868137E190E93A800D7076C /* door-tileset.plist in Resources */ = {isa = PBXBuildFile; fileRef = D868137C190E93A700D7076C /* door-tileset.plist */; };
+		D868137F190E93A800D7076C /* door-tileset.plist in Resources */ = {isa = PBXBuildFile; fileRef = D868137C190E93A700D7076C /* door-tileset.plist */; };
+		D8681380190E93A800D7076C /* door-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = D868137D190E93A800D7076C /* door-tileset.png */; };
+		D8681381190E93A800D7076C /* door-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = D868137D190E93A800D7076C /* door-tileset.png */; };
 		D8907A2A190D4EBE0016C464 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8907A28190D4EBE0016C464 /* GameState.cpp */; };
 		D8907A2B190D4EBE0016C464 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8907A28190D4EBE0016C464 /* GameState.cpp */; };
 		D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */; };
@@ -285,7 +293,7 @@
 		503AE10417EB98FF00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = mac/Prefix.pch; sourceTree = "<group>"; };
 		503AE11117EB99EE00D1A890 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		503AE11A17EB9C5A00D1A890 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		5087E76F17EB910900C73F5D /* LD29 Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LD29 Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5087E76F17EB910900C73F5D /* Introspectrum-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Introspectrum-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E77217EB970100C73F5D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5087E77317EB970100C73F5D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5087E77417EB970100C73F5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -321,6 +329,10 @@
 		D80CC6F3190C2F48000272B9 /* 04b-48.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "04b-48.fnt"; sourceTree = "<group>"; };
 		D80CC6F4190C2F48000272B9 /* 04b-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04b-48.png"; sourceTree = "<group>"; };
 		D80CC6FA190C3410000272B9 /* thick tile-96x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thick tile-96x144.png"; sourceTree = "<group>"; };
+		D86500C7190E9C7300016980 /* gameover1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gameover1.tmx; sourceTree = "<group>"; };
+		D86500C8190E9C7300016980 /* gameover2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gameover2.tmx; sourceTree = "<group>"; };
+		D868137C190E93A700D7076C /* door-tileset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "door-tileset.plist"; sourceTree = "<group>"; };
+		D868137D190E93A800D7076C /* door-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-tileset.png"; sourceTree = "<group>"; };
 		D8907A28190D4EBE0016C464 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
 		D8907A29190D4EBE0016C464 /* GameState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
 		D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainMenu.ccbi; sourceTree = "<group>"; };
@@ -441,7 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* LD29 iOS.app */,
-				5087E76F17EB910900C73F5D /* LD29 Mac.app */,
+				5087E76F17EB910900C73F5D /* Introspectrum-mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -547,6 +559,10 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D86500C7190E9C7300016980 /* gameover1.tmx */,
+				D86500C8190E9C7300016980 /* gameover2.tmx */,
+				D868137C190E93A700D7076C /* door-tileset.plist */,
+				D868137D190E93A800D7076C /* door-tileset.png */,
 				D8AF3F36190E458E00DBAAEB /* bkg-ego.png */,
 				D8AF3F37190E458E00DBAAEB /* bkg-id.png */,
 				D8AF3F38190E458E00DBAAEB /* bkg-superego.png */,
@@ -627,7 +643,7 @@
 			);
 			name = "Introspectrum-mac";
 			productName = iphone;
-			productReference = 5087E76F17EB910900C73F5D /* LD29 Mac.app */;
+			productReference = 5087E76F17EB910900C73F5D /* Introspectrum-mac.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -750,6 +766,7 @@
 				D8A0DEE9190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				D80CC6F5190C2F48000272B9 /* 04b-48.fnt in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				D86500CB190E9C7300016980 /* gameover2.tmx in Resources */,
 				D8AF3F25190E1F0100DBAAEB /* hall2.tmx in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				D80CC6EF190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
@@ -760,8 +777,10 @@
 				D80CC6EB190C2F07000272B9 /* id-level1.tmx in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				D80CC6F7190C2F48000272B9 /* 04b-48.png in Resources */,
+				D8681380190E93A800D7076C /* door-tileset.png in Resources */,
 				D8AF3F30190E2FBB00DBAAEB /* venice-48.fnt in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				D868137E190E93A800D7076C /* door-tileset.plist in Resources */,
 				D8B14376190CEEEA00387CD7 /* slab-tileset.plist in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				D8B14379190CEF3200387CD7 /* slab-tileset.png in Resources */,
@@ -780,6 +799,7 @@
 				D8AF3F2E190E2FBB00DBAAEB /* venice-48.png in Resources */,
 				D80CC6E9190C2F07000272B9 /* ego-level1.tmx in Resources */,
 				D8AF3F24190E1F0100DBAAEB /* hall1.tmx in Resources */,
+				D86500C9190E9C7300016980 /* gameover1.tmx in Resources */,
 				D8AF3F32190E2FBB00DBAAEB /* alagard-48.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
@@ -793,11 +813,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8681381190E93A800D7076C /* door-tileset.png in Resources */,
 				D8AF3F35190E2FBB00DBAAEB /* alagard-48.fnt in Resources */,
 				D8AF3F29190E218B00DBAAEB /* hall2.tmx in Resources */,
 				D8A0DEEA190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				D80CC6EA190C2F07000272B9 /* ego-level1.tmx in Resources */,
 				D8AF3F28190E218700DBAAEB /* hall1.tmx in Resources */,
+				D868137F190E93A800D7076C /* door-tileset.plist in Resources */,
 				D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */,
 				D8AF3F3E190E458E00DBAAEB /* bkg-superego.png in Resources */,
 				D8AF3F2F190E2FBB00DBAAEB /* venice-48.png in Resources */,
@@ -811,6 +833,8 @@
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				D80CC6E6190C2F07000272B9 /* characters-tileset.plist in Resources */,
 				D8A0DEEC190AD57800B57683 /* MainScene.ccbi in Resources */,
+				D86500CC190E9C7300016980 /* gameover2.tmx in Resources */,
+				D86500CA190E9C7300016980 /* gameover1.tmx in Resources */,
 				D80CC6F0190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
 				D80CC6F6190C2F48000272B9 /* 04b-48.fnt in Resources */,
 				D8B14377190CEEEA00387CD7 /* slab-tileset.plist in Resources */,

@@ -251,6 +251,19 @@
                 <key>sourceSize</key>
                 <string>{96,144}</string>
             </dict>
+            <key>key.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{394,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -261,7 +274,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b2e8180cedc0ce48f4bc6efa5a933dd7:a7ec2d519574288475af54572ac1dad0:165544c4e188d86d10fabc5ed2f5219f$</string>
+            <string>$TexturePacker:SmartUpdate:0f4b3f16d3298d84d8bd662e3d56de58:5df4715118c21a1e01ed3bcac977c9ba:165544c4e188d86d10fabc5ed2f5219f$</string>
             <key>textureFileName</key>
             <string>characters-tileset.png</string>
         </dict>

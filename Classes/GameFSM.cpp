@@ -8,6 +8,7 @@
 
 #include "GameFSM.hpp"
 #include "MainScene.hpp"
+#include "GameState.hpp"
 
 #pragma mark - Init
 GameFSM* GameFSM::create()
@@ -178,7 +179,15 @@ void GameFSM::checkCollision( Point playerPos )
 
         mGameLayer->enableTextBoardAt( tileCoord );
     }
-
+    
+    if( mGameLayer->tileHasProperty( tileCoord, "collectible", mGameLayer->mCharacterLayer ) )
+    {
+        // remove key from the map
+        
+        GameState::getInstance()->setPlayerHasKey( true );
+        mGameLayer->removeKeyFromMap( tileCoord );
+            
+    }
     
     m_pBrain->popState();
     m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState, this ) );

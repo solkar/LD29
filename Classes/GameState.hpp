@@ -35,10 +35,15 @@ public:
 
     cocos2d::TMXTiledMap* getPersistentMapData( const std::string& mapName );
     void setPersistentMapData( const std::string& mapName, cocos2d::TMXTiledMap* map  );
+
+    void setPlayerHasKey( bool );
+    bool getPlayerHasKey();
     
 private:
     cocos2d::Map<std::string, cocos2d::TMXLayer*> m_mLayerData;
     cocos2d::Map<std::string, cocos2d::TMXTiledMap*> m_mMapData;
+
+    bool mPlayerHasKey;
 
 };
 

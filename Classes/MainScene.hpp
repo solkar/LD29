@@ -79,6 +79,10 @@ public:
     void enableTextBoardAt( Point tile );
 
     void clearTextBoard();
+
+    cocos2d::TMXLayer *mCharacterLayer;
+
+    void removeKeyFromMap( const Point& tile );
 private:
     
     void initTouchControl();
@@ -88,7 +92,6 @@ private:
     
     cocos2d::TMXTiledMap * mTileMap;
     cocos2d::TMXLayer *mMetaLayer;
-    cocos2d::TMXLayer *mCharacterLayer;
     cocos2d::Size mTileSize;
     cocos2d::TMXObjectGroup *mExitObject;
     cocos2d::Point mSpawnPoint;

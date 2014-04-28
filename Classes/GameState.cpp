@@ -100,3 +100,10 @@ void GameState::setPersistentMapData(const std::string& mapName, cocos2d::TMXTil
     m_mMapData.insert( mapName , map );
 }
 
+void GameState::setPlayerHasKey( bool value ){ mPlayerHasKey = value; }
+bool GameState::getPlayerHasKey()
+{ 
+#ifdef HASKEY_ALWAYS_TRUE
+    return true;
+#endif
+    return mPlayerHasKey; }

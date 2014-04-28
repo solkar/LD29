@@ -17,7 +17,10 @@
 
 #define GID_ROCK 12 // Second tileset
 #define GID_EMPTY 0 
+#define GID_KEYL2 23
 
 #define SKIP_MAINMENU
+
+#define HASKEY_ALWAYS_TRUE
 
 #endif

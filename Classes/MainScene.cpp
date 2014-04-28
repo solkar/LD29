@@ -73,10 +73,13 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
 
     // load init map
     mTileMap = nullptr;
-    //this->loadMap("ego-level1");
+    this->loadMap("ego-level1");
     //this->loadMap( FIRST_MAP ); // NG, can't pass a constant
-    this->loadMap( "hall1" );
+    //this->loadMap( "hall1" );
+    //this->loadMap( "superEgo-level1" );
    
+    // player has no key
+    GameState::getInstance()->setPlayerHasKey( false );
     
     Point spawnCell =  this->getSpawnTile();
     
@@ -409,6 +412,7 @@ bool MainScene::tileIsSwitch( Point tile )
 
 }
 
+
 bool MainScene::tileHasProperty( Point tile , const std::string propertyName, TMXLayer* layer)
 {
     
@@ -620,6 +624,13 @@ Point MainScene::getSpawnTile()
     }
 
 }
+
+
+void MainScene::removeKeyFromMap( const Point& tile)
+{
+    mCharacterLayer->setTileGID(GID_EMPTY, tile );
+
+}
 #pragma mark - Controls
 void MainScene::initTouchControl()
 {
@@ -646,3 +657,4 @@ void MainScene::onTouchEnded(Touch* touch, Event  *event)
 
 
 }
+
