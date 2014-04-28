@@ -25,7 +25,7 @@
 #define GID_KEYL2 23
 #define GID_L2_OPENDOOR 60
 
-#define SKIP_MAINMENU
+//#define SKIP_MAINMENU
 
 //#define HASKEY_ALWAYS_TRUE
 
