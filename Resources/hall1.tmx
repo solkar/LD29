@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="96" tileheight="48">
  <properties>
-  <property name="name" value="ego-level1"/>
-  <property name="psychelevel" value="ego"/>
+  <property name="name" value="hall1"/>
+  <property name="psychelevel" value="hall"/>
  </properties>
  <tileset firstgid="1" name="meta-tiles" tilewidth="96" tileheight="48">
   <image source="meta-tiles.png" width="96" height="144"/>
@@ -35,34 +35,37 @@
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFGgy4gSYBTAt16kSoYx5A95GiDhkw4xAHAHvECpY=
+   eJxjYKAcaOIR10SSx6cOG00NdZpEqCMEiFVHDQAAefoCug==
   </data>
  </layer>
  <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYEbCjGh8ZIwMGKE0sjg2ddgAKeoYkeyihnmkqCOklhzzCGEAWXgAcQ==
+   eJxjYMAOmJEwLnEYZsShDhsfmzgTFnlC+olVx0SEOnRMjLvRAS79pAIAYXQAbA==
   </data>
  </layer>
  <layer name="characters" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAMCFOofzADoQGwEwAiqAAm
+   eJxjYBhYwEemPl6qumLwAAAbaAAc
   </data>
  </layer>
  <objectgroup name="exits" width="10" height="10">
-  <object name="exit" type="toSupEgo" x="192" y="48" width="48" height="48">
+  <object name="exit" type="toHall2" x="336" y="48" width="48" height="48">
    <properties>
     <property name="destination" value="superEgo-level1"/>
     <property name="startx" value="1"/>
     <property name="starty" value="8"/>
    </properties>
   </object>
-  <object name="exit" type="toId" x="48" y="192" width="48" height="48">
+  <object name="spawn" type="spawn" x="144" y="336" width="48" height="48"/>
+  <object name="textboard" type="textA" x="144" y="144" width="48" height="48">
    <properties>
-    <property name="destination" value="id-level1"/>
-    <property name="startx" value="2"/>
-    <property name="starty" value="7"/>
+    <property name="text" value="welcome"/>
    </properties>
   </object>
-  <object name="spawn" type="spawn" x="144" y="288" width="48" height="48"/>
+  <object name="textboard" type="textB" x="288" y="240" width="48" height="48">
+   <properties>
+    <property name="text" value="Bye"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

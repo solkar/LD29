@@ -1,5 +1,8 @@
 #include "AppDelegate.h"
 #include "MainMenu.hpp"
+#include "MainScene.hpp"
+
+#include "Macros.h"
 
 USING_NS_CC;
 
@@ -31,7 +34,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
             "characters-tileset.png");
     
     // create a scene. it's an autorelease object
+#ifndef SKIP_MAINMENU
     auto scene = MainMenu::createScene();
+#else
+    auto scene = MainScene::createScene();
+#endif
 
     // run
     director->runWithScene(scene);

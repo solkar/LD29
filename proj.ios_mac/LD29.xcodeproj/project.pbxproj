@@ -93,6 +93,10 @@
 		D8A0DEF0190AD5D200B57683 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEED190AD5D200B57683 /* MainScene.cpp */; };
 		D8A0DEF6190AE02F00B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
 		D8A0DEF7190AE03000B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
+		D8AF3F24190E1F0100DBAAEB /* hall1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F22190E1F0100DBAAEB /* hall1.tmx */; };
+		D8AF3F25190E1F0100DBAAEB /* hall2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F23190E1F0100DBAAEB /* hall2.tmx */; };
+		D8AF3F28190E218700DBAAEB /* hall1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F22190E1F0100DBAAEB /* hall1.tmx */; };
+		D8AF3F29190E218B00DBAAEB /* hall2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F23190E1F0100DBAAEB /* hall2.tmx */; };
 		D8B1436A190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
 		D8B1436B190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
 		D8B1436C190CBF1700387CD7 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14368190CBF1700387CD7 /* FSM.cpp */; };
@@ -315,6 +319,8 @@
 		D8A0DEF1190AD68000B57683 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = ../Classes/Macros.h; sourceTree = "<group>"; };
 		D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HudLayer.cpp; path = ../Classes/HudLayer.cpp; sourceTree = "<group>"; };
 		D8A0DEF5190AE02F00B57683 /* HudLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = HudLayer.hpp; path = ../Classes/HudLayer.hpp; sourceTree = "<group>"; };
+		D8AF3F22190E1F0100DBAAEB /* hall1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hall1.tmx; sourceTree = "<group>"; };
+		D8AF3F23190E1F0100DBAAEB /* hall2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hall2.tmx; sourceTree = "<group>"; };
 		D8B14366190CBF1700387CD7 /* GameFSM.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameFSM.hpp; sourceTree = "<group>"; };
 		D8B14367190CBF1700387CD7 /* GameFSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameFSM.cpp; sourceTree = "<group>"; };
 		D8B14368190CBF1700387CD7 /* FSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSM.cpp; sourceTree = "<group>"; };
@@ -520,6 +526,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8AF3F22190E1F0100DBAAEB /* hall1.tmx */,
+				D8AF3F23190E1F0100DBAAEB /* hall2.tmx */,
 				D8B14378190CEF3200387CD7 /* slab-tileset.png */,
 				D8B14373190CEEE900387CD7 /* slab-tileset.plist */,
 				D80CC6FA190C3410000272B9 /* thick tile-96x144.png */,
@@ -714,6 +722,7 @@
 				D8A0DEE9190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				D80CC6F5190C2F48000272B9 /* 04b-48.fnt in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				D8AF3F25190E1F0100DBAAEB /* hall2.tmx in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				D80CC6EF190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -737,6 +746,7 @@
 				D8A0DEEB190AD57800B57683 /* MainScene.ccbi in Resources */,
 				D80CC6FB190C3410000272B9 /* thick tile-96x144.png in Resources */,
 				D80CC6E9190C2F07000272B9 /* ego-level1.tmx in Resources */,
+				D8AF3F24190E1F0100DBAAEB /* hall1.tmx in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				D80CC6ED190C2F07000272B9 /* meta-tiles.png in Resources */,
@@ -748,8 +758,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8AF3F29190E218B00DBAAEB /* hall2.tmx in Resources */,
 				D8A0DEEA190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				D80CC6EA190C2F07000272B9 /* ego-level1.tmx in Resources */,
+				D8AF3F28190E218700DBAAEB /* hall1.tmx in Resources */,
 				D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */,
 				D80CC6E8190C2F07000272B9 /* characters-tileset.png in Resources */,
 				D80CC6F8190C2F48000272B9 /* 04b-48.png in Resources */,

@@ -12,6 +12,9 @@
 #include "GameState.hpp"
 #include "Macros.h"
 
+#define FIRST_MAP "hall1"
+//#define FIRST_MAP "ego-level1"
+
 USING_NS_CC;
 USING_NS_CC_EXT;
 using namespace cocosbuilder;
@@ -65,9 +68,12 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
     
     // load init map
     mTileMap = nullptr;
-    this->loadMap( "ego-level1" );
+    //this->loadMap("ego-level1");
+    //this->loadMap( FIRST_MAP ); // NG, can't pass a constant
+    this->loadMap( "hall1" );
+   
     
-    Point spawnCell = Point( 8 , 1 );
+    Point spawnCell =  this->getSpawnTile();
     
     // load player avatar
     mHero = Sprite::createWithSpriteFrameName("4-player-l.png");
@@ -94,7 +100,7 @@ Control::Handler MainScene::onResolveCCBCCControlSelector(Ref * pTarget, const c
 }
 
 bool MainScene::onAssignCCBMemberVariable(Ref * pTarget, const char * pMemberVariableName, Node * pNode) {
-//    CCB_MEMBERVARIABLEASSIGNER_GLUE_WEAK(this, "mComponent", Node *, this->mNode);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE_WEAK(this, "mTopLabel", Label *, this->mTopLabel);
     return false;
 }
 
@@ -105,6 +111,13 @@ Sprite* MainScene::getHero()
     assert( mHero != nullptr );
     return mHero; 
 };
+
+#pragma mark - Text Board
+void MainScene::clearTextBoard()
+{
+    mTopLabel->setString("");
+
+}
 #pragma mark - Loop
 void MainScene::update( float dt )
 {
@@ -210,6 +223,7 @@ void MainScene::loadMap( std::string name)
         this->copyGID( egoLayer , mCharacterLayer );
     }
 
+
     // save meta layer data
     mMetaLayer = mTileMap->getLayer("meta");
     mMetaLayer->setVisible( false );
@@ -309,6 +323,7 @@ bool MainScene::tileIsExit( Point tile )
     
     return false;
 }
+
 
 /**
  * Check if there's a mobile object 
@@ -508,6 +523,73 @@ void MainScene::enableSwitchAt( Point switchTile )
 
 }
 
+void MainScene::enableTextBoardAt( Point switchTile )
+{
+    assert(mExitObject != nullptr);
+    
+    //Check if player ended up in an exit tile
+    auto &exits = mExitObject->getObjects();
+    for (auto& exit : exits)
+    {
+        ValueMap& dict = exit.asValueMap();
+
+        // discard not textboard objects
+        if( dict["name"].asString().compare("textboard") != 0 )
+            continue;
+
+        // discard wrong position
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+        
+        int posx = x / width;
+        int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
+        Point nonIsoCoor = Point(posx, posy);
+        
+        if( nonIsoCoor != switchTile )
+            continue;
+        
+        // get text from switch object
+        auto text = dict["text"].asString();
+
+        // show text
+        mTopLabel->setString( text );
+        
+
+    }
+
+}
+
+Point MainScene::getSpawnTile()
+{
+
+    //Check if player ended up in an exit tile
+    auto &exits = mExitObject->getObjects();
+    for (auto& exit : exits)
+    {
+        ValueMap& dict = exit.asValueMap();
+        
+        // ignore if name of the object is not "spawn"
+        auto name = dict["name"].asString();
+        if( name.compare("spawn") != 0)
+            continue;
+        
+        // get coordinates of the object
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+
+        // get position, work only with orthogonal
+        int posx = x / width;
+        int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
+        Point orthoTile = Point(posx, posy);
+        return orthoTile;
+
+    }
+
+}
 #pragma mark - Controls
 void MainScene::initTouchControl()
 {

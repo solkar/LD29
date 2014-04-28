@@ -140,6 +140,9 @@ void GameFSM::checkCollision( Point playerPos )
     
 	Point tileCoord = mGameLayer->tileCoordForPosition( playerPos );
     
+    // clear text board
+    mGameLayer->clearTextBoard();
+    
     if( mGameLayer->tileIsCollidable( tileCoord ) ){
         m_pBrain->popState();
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
@@ -171,7 +174,10 @@ void GameFSM::checkCollision( Point playerPos )
         // enable rock
         //mGameLayer->enableRockAtEgo();
         mGameLayer->enableSwitchAt( tileCoord );
+
+        mGameLayer->enableTextBoardAt( tileCoord );
     }
+
     
     m_pBrain->popState();
     m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState, this ) );

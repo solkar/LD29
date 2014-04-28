@@ -74,6 +74,9 @@ public:
 
     void enableRockAtEgo();
     void enableSwitchAt( Point tile );
+    void enableTextBoardAt( Point tile );
+
+    void clearTextBoard();
 private:
     
     void initTouchControl();
@@ -87,6 +90,7 @@ private:
     cocos2d::Size mTileSize;
     cocos2d::TMXObjectGroup *mExitObject;
     cocos2d::Point mSpawnPoint;
+    cocos2d::Label* mTopLabel;
     
     cocos2d::Sprite* mHero;
     
@@ -96,6 +100,8 @@ private:
 
     GameFSM *mGameFsm;
     
+
+    Point getSpawnTile();
 };
 
 class MainSceneLoader : public cocosbuilder::LayerLoader {
