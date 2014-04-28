@@ -15,7 +15,8 @@
 #include "cocosbuilder/CocosBuilder.h"
 
 enum{
-    zMap = -1,
+    zBackground=-1,
+    zMap,
     zHero,
     zHud,
 };
@@ -103,6 +104,7 @@ private:
     
 
     Point getSpawnTile();
+    Sprite* mBackground;
 };
 
 class MainSceneLoader : public cocosbuilder::LayerLoader {

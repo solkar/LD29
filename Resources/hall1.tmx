@@ -2,7 +2,7 @@
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="96" tileheight="48">
  <properties>
   <property name="name" value="hall1"/>
-  <property name="psychelevel" value="hall"/>
+  <property name="psychelevel" value="ego"/>
  </properties>
  <tileset firstgid="1" name="meta-tiles" tilewidth="96" tileheight="48">
   <image source="meta-tiles.png" width="96" height="144"/>
@@ -35,7 +35,7 @@
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAcaOIR10SSx6cOG00NdZpEqCMEiFVHDQAAefoCug==
+   eJxjYKAcaOAQ10TCDEg0NnXYaGqo0yRCHSFArDpqAAB4rgK5
   </data>
  </layer>
  <layer name="meta" width="10" height="10">

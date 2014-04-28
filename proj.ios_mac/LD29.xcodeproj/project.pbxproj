@@ -105,6 +105,12 @@
 		D8AF3F33190E2FBB00DBAAEB /* alagard-48.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F2C190E2FBB00DBAAEB /* alagard-48.png */; };
 		D8AF3F34190E2FBB00DBAAEB /* alagard-48.fnt in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F2D190E2FBB00DBAAEB /* alagard-48.fnt */; };
 		D8AF3F35190E2FBB00DBAAEB /* alagard-48.fnt in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F2D190E2FBB00DBAAEB /* alagard-48.fnt */; };
+		D8AF3F39190E458E00DBAAEB /* bkg-ego.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F36190E458E00DBAAEB /* bkg-ego.png */; };
+		D8AF3F3A190E458E00DBAAEB /* bkg-ego.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F36190E458E00DBAAEB /* bkg-ego.png */; };
+		D8AF3F3B190E458E00DBAAEB /* bkg-id.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F37190E458E00DBAAEB /* bkg-id.png */; };
+		D8AF3F3C190E458E00DBAAEB /* bkg-id.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F37190E458E00DBAAEB /* bkg-id.png */; };
+		D8AF3F3D190E458E00DBAAEB /* bkg-superego.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F38190E458E00DBAAEB /* bkg-superego.png */; };
+		D8AF3F3E190E458E00DBAAEB /* bkg-superego.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AF3F38190E458E00DBAAEB /* bkg-superego.png */; };
 		D8B1436A190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
 		D8B1436B190CBF1700387CD7 /* GameFSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14367190CBF1700387CD7 /* GameFSM.cpp */; };
 		D8B1436C190CBF1700387CD7 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8B14368190CBF1700387CD7 /* FSM.cpp */; };
@@ -333,6 +339,9 @@
 		D8AF3F2B190E2FBB00DBAAEB /* venice-48.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "venice-48.fnt"; sourceTree = "<group>"; };
 		D8AF3F2C190E2FBB00DBAAEB /* alagard-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alagard-48.png"; sourceTree = "<group>"; };
 		D8AF3F2D190E2FBB00DBAAEB /* alagard-48.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "alagard-48.fnt"; sourceTree = "<group>"; };
+		D8AF3F36190E458E00DBAAEB /* bkg-ego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg-ego.png"; sourceTree = "<group>"; };
+		D8AF3F37190E458E00DBAAEB /* bkg-id.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg-id.png"; sourceTree = "<group>"; };
+		D8AF3F38190E458E00DBAAEB /* bkg-superego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg-superego.png"; sourceTree = "<group>"; };
 		D8B14366190CBF1700387CD7 /* GameFSM.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameFSM.hpp; sourceTree = "<group>"; };
 		D8B14367190CBF1700387CD7 /* GameFSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameFSM.cpp; sourceTree = "<group>"; };
 		D8B14368190CBF1700387CD7 /* FSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSM.cpp; sourceTree = "<group>"; };
@@ -538,6 +547,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8AF3F36190E458E00DBAAEB /* bkg-ego.png */,
+				D8AF3F37190E458E00DBAAEB /* bkg-id.png */,
+				D8AF3F38190E458E00DBAAEB /* bkg-superego.png */,
 				D8AF3F2A190E2FBB00DBAAEB /* venice-48.png */,
 				D8AF3F2B190E2FBB00DBAAEB /* venice-48.fnt */,
 				D8AF3F2C190E2FBB00DBAAEB /* alagard-48.png */,
@@ -596,9 +608,9 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* LD29 iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5087E73D17EB910900C73F5D /* LD29 Mac */ = {
+		5087E73D17EB910900C73F5D /* Introspectrum-mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "LD29 Mac" */;
+			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "Introspectrum-mac" */;
 			buildPhases = (
 				5087E74817EB910900C73F5D /* Resources */,
 				5087E75617EB910900C73F5D /* Sources */,
@@ -613,7 +625,7 @@
 				1AC6FB1A180E9959004C840B /* PBXTargetDependency */,
 				1AC6FB1C180E9959004C840B /* PBXTargetDependency */,
 			);
-			name = "LD29 Mac";
+			name = "Introspectrum-mac";
 			productName = iphone;
 			productReference = 5087E76F17EB910900C73F5D /* LD29 Mac.app */;
 			productType = "com.apple.product-type.application";
@@ -652,7 +664,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* LD29 iOS */,
-				5087E73D17EB910900C73F5D /* LD29 Mac */,
+				5087E73D17EB910900C73F5D /* Introspectrum-mac */,
 			);
 		};
 /* End PBXProject section */
@@ -759,8 +771,10 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				D80CC6E5190C2F07000272B9 /* characters-tileset.plist in Resources */,
+				D8AF3F39190E458E00DBAAEB /* bkg-ego.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */,
+				D8AF3F3D190E458E00DBAAEB /* bkg-superego.png in Resources */,
 				D8A0DEEB190AD57800B57683 /* MainScene.ccbi in Resources */,
 				D80CC6FB190C3410000272B9 /* thick tile-96x144.png in Resources */,
 				D8AF3F2E190E2FBB00DBAAEB /* venice-48.png in Resources */,
@@ -769,6 +783,7 @@
 				D8AF3F32190E2FBB00DBAAEB /* alagard-48.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
+				D8AF3F3B190E458E00DBAAEB /* bkg-id.png in Resources */,
 				D80CC6ED190C2F07000272B9 /* meta-tiles.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -784,10 +799,13 @@
 				D80CC6EA190C2F07000272B9 /* ego-level1.tmx in Resources */,
 				D8AF3F28190E218700DBAAEB /* hall1.tmx in Resources */,
 				D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */,
+				D8AF3F3E190E458E00DBAAEB /* bkg-superego.png in Resources */,
 				D8AF3F2F190E2FBB00DBAAEB /* venice-48.png in Resources */,
 				D80CC6E8190C2F07000272B9 /* characters-tileset.png in Resources */,
 				D80CC6F8190C2F48000272B9 /* 04b-48.png in Resources */,
+				D8AF3F3C190E458E00DBAAEB /* bkg-id.png in Resources */,
 				D80CC6EE190C2F07000272B9 /* meta-tiles.png in Resources */,
+				D8AF3F3A190E458E00DBAAEB /* bkg-ego.png in Resources */,
 				D80CC6FC190C3410000272B9 /* thick tile-96x144.png in Resources */,
 				D8AF3F33190E2FBB00DBAAEB /* alagard-48.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
@@ -1084,7 +1102,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "LD29 Mac" */ = {
+		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "Introspectrum-mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5087E76D17EB910900C73F5D /* Debug */,

@@ -66,6 +66,11 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
     // init touch/mouse input
     this->initTouchControl();
     
+    // add background
+    mBackground = Sprite::create("bkg-ego.png");
+    mBackground->setAnchorPoint( Point(0,0) );
+    addChild( mBackground, zBackground );
+
     // load init map
     mTileMap = nullptr;
     //this->loadMap("ego-level1");
@@ -229,6 +234,23 @@ void MainScene::loadMap( std::string name)
     mMetaLayer->setVisible( false );
     assert(mMetaLayer != nullptr);
     
+    // change background
+    auto mapType = mTileMap->getProperty("psychelevel").asString();
+    std::string fileName = "bkg-";
+    
+//    if( mapType.compare("superego") == 0 ){
+//        fileName="bkg-superego";
+//    }else if( mapType.compare("id") == 0 ){
+//        fileName="bkg-superegoid";
+//    }else{
+//         fileName="bkg-ego";
+//    }
+    fileName = fileName.append(mapType + ".png");
+    
+    // update sprite frame
+    mBackground->setSpriteFrame(Sprite::create(fileName)->getSpriteFrame());
+
+
     
 }
 
