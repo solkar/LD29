@@ -106,6 +106,5 @@ bool GameState::getPlayerHasKey()
 #ifdef HASKEY_ALWAYS_TRUE
     return true;
 #endif
-    return true;
     return mPlayerHasKey;
 }

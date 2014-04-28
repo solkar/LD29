@@ -100,6 +100,7 @@ private:
     cocos2d::TMXObjectGroup *mExitObject;
     cocos2d::Point mSpawnPoint;
     cocos2d::Label* mTopLabel;
+    cocos2d::extension::Scale9Sprite* mTopBackground;
     
     cocos2d::Sprite* mHero;
     

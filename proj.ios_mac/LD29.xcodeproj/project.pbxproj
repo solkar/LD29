@@ -83,6 +83,10 @@
 		D86500CA190E9C7300016980 /* gameover1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C7190E9C7300016980 /* gameover1.tmx */; };
 		D86500CB190E9C7300016980 /* gameover2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C8190E9C7300016980 /* gameover2.tmx */; };
 		D86500CC190E9C7300016980 /* gameover2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = D86500C8190E9C7300016980 /* gameover2.tmx */; };
+		D86500D0190EB35000016980 /* panelInset_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500CF190EB35000016980 /* panelInset_blue.png */; };
+		D86500D1190EB35000016980 /* panelInset_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500CF190EB35000016980 /* panelInset_blue.png */; };
+		D86500D3190EB4F700016980 /* panelInset_beige.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500D2190EB4F700016980 /* panelInset_beige.png */; };
+		D86500D4190EB4F700016980 /* panelInset_beige.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500D2190EB4F700016980 /* panelInset_beige.png */; };
 		D868137E190E93A800D7076C /* door-tileset.plist in Resources */ = {isa = PBXBuildFile; fileRef = D868137C190E93A700D7076C /* door-tileset.plist */; };
 		D868137F190E93A800D7076C /* door-tileset.plist in Resources */ = {isa = PBXBuildFile; fileRef = D868137C190E93A700D7076C /* door-tileset.plist */; };
 		D8681380190E93A800D7076C /* door-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = D868137D190E93A800D7076C /* door-tileset.png */; };
@@ -331,6 +335,8 @@
 		D80CC6FA190C3410000272B9 /* thick tile-96x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thick tile-96x144.png"; sourceTree = "<group>"; };
 		D86500C7190E9C7300016980 /* gameover1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gameover1.tmx; sourceTree = "<group>"; };
 		D86500C8190E9C7300016980 /* gameover2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gameover2.tmx; sourceTree = "<group>"; };
+		D86500CF190EB35000016980 /* panelInset_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panelInset_blue.png; sourceTree = "<group>"; };
+		D86500D2190EB4F700016980 /* panelInset_beige.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panelInset_beige.png; sourceTree = "<group>"; };
 		D868137C190E93A700D7076C /* door-tileset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "door-tileset.plist"; sourceTree = "<group>"; };
 		D868137D190E93A800D7076C /* door-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-tileset.png"; sourceTree = "<group>"; };
 		D8907A28190D4EBE0016C464 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
@@ -559,6 +565,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D86500D2190EB4F700016980 /* panelInset_beige.png */,
+				D86500CF190EB35000016980 /* panelInset_blue.png */,
 				D86500C7190E9C7300016980 /* gameover1.tmx */,
 				D86500C8190E9C7300016980 /* gameover2.tmx */,
 				D868137C190E93A700D7076C /* door-tileset.plist */,
@@ -773,6 +781,7 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				D86500D3190EB4F700016980 /* panelInset_beige.png in Resources */,
 				D8AF3F34190E2FBB00DBAAEB /* alagard-48.fnt in Resources */,
 				D80CC6EB190C2F07000272B9 /* id-level1.tmx in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -791,6 +800,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				D80CC6E5190C2F07000272B9 /* characters-tileset.plist in Resources */,
 				D8AF3F39190E458E00DBAAEB /* bkg-ego.png in Resources */,
+				D86500D0190EB35000016980 /* panelInset_blue.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */,
 				D8AF3F3D190E458E00DBAAEB /* bkg-superego.png in Resources */,
@@ -838,9 +848,11 @@
 				D80CC6F0190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
 				D80CC6F6190C2F48000272B9 /* 04b-48.fnt in Resources */,
 				D8B14377190CEEEA00387CD7 /* slab-tileset.plist in Resources */,
+				D86500D4190EB4F700016980 /* panelInset_beige.png in Resources */,
 				D80CC6EC190C2F07000272B9 /* id-level1.tmx in Resources */,
 				D8AF3F31190E2FBB00DBAAEB /* venice-48.fnt in Resources */,
 				D8B1437A190CEF3200387CD7 /* slab-tileset.png in Resources */,
+				D86500D1190EB35000016980 /* panelInset_blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

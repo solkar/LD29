@@ -27,6 +27,6 @@
 
 #define SKIP_MAINMENU
 
-#define HASKEY_ALWAYS_TRUE
+//#define HASKEY_ALWAYS_TRUE
 
 #endif

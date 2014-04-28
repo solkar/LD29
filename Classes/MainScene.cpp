@@ -109,6 +109,7 @@ Control::Handler MainScene::onResolveCCBCCControlSelector(Ref * pTarget, const c
 
 bool MainScene::onAssignCCBMemberVariable(Ref * pTarget, const char * pMemberVariableName, Node * pNode) {
     CCB_MEMBERVARIABLEASSIGNER_GLUE_WEAK(this, "mTopLabel", Label *, this->mTopLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE_WEAK(this, "mTopBackground", Scale9Sprite *, this->mTopBackground);
     return false;
 }
 
@@ -124,6 +125,7 @@ Sprite* MainScene::getHero()
 void MainScene::clearTextBoard()
 {
     mTopLabel->setString("");
+    mTopBackground->setVisible( false );
 
 }
 #pragma mark - Loop
@@ -592,6 +594,7 @@ void MainScene::enableTextBoardAt( Point switchTile )
 
         // show text
         mTopLabel->setString( text );
+        mTopBackground->setVisible( true );
         
 
     }
