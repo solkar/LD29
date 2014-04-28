@@ -78,7 +78,7 @@
  </layer>
  <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYARiZihGZqNjJgb8AKYOG2AiUh26eYxEqiPWPFLV4fMzqeYRgwFUyABt
+   eJxjZmBgYEbCjGh8ZMzEgB/A1GEDTESqQzePkUh1xJpHqjp8fibVPGIwAFfgAG8=
   </data>
  </layer>
  <layer name="characters" width="10" height="10">
@@ -121,7 +121,12 @@
   </object>
   <object name="lock" x="48" y="48" width="48" height="48">
    <properties>
+    <property name="doorx" value="1"/>
+    <property name="doory" value="1"/>
+    <property name="exitx" value="1"/>
+    <property name="exity" value="0"/>
     <property name="keyName" value="keyL2"/>
+    <property name="openDoorGid" value="60"/>
    </properties>
   </object>
  </objectgroup>

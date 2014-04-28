@@ -75,8 +75,11 @@ public:
     void setPlayerInSpawnPoint();
 
     void enableRockAtEgo();
+
+    // switch tiles
     void enableSwitchAt( Point tile );
     void enableTextBoardAt( Point tile );
+    void enableLockAt( const Point& tile );
 
     void clearTextBoard();
 
@@ -92,6 +95,7 @@ private:
     
     cocos2d::TMXTiledMap * mTileMap;
     cocos2d::TMXLayer *mMetaLayer;
+    cocos2d::TMXLayer *mDoorLayer;
     cocos2d::Size mTileSize;
     cocos2d::TMXObjectGroup *mExitObject;
     cocos2d::Point mSpawnPoint;

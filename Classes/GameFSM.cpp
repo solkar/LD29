@@ -178,6 +178,8 @@ void GameFSM::checkCollision( Point playerPos )
         mGameLayer->enableSwitchAt( tileCoord );
 
         mGameLayer->enableTextBoardAt( tileCoord );
+
+        mGameLayer->enableLockAt( tileCoord );
     }
     
     if( mGameLayer->tileHasProperty( tileCoord, "collectible", mGameLayer->mCharacterLayer ) )

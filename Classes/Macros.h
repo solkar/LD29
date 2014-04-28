@@ -15,9 +15,15 @@
 
 #define NO_MUSIC
 
+// Meta GID
+#define GID_METAEXIT 1
+#define GID_METASWITCH 2
+#define GID_METACOLLIDABLE 3
+
 #define GID_ROCK 12 // Second tileset
 #define GID_EMPTY 0 
 #define GID_KEYL2 23
+#define GID_L2_OPENDOOR 60
 
 #define SKIP_MAINMENU
 

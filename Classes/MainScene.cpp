@@ -237,6 +237,9 @@ void MainScene::loadMap( std::string name)
     mMetaLayer->setVisible( false );
     assert(mMetaLayer != nullptr);
     
+    // save doors layer
+    mDoorLayer = mTileMap->getLayer("doors");
+    
     // change background
     auto mapType = mTileMap->getProperty("psychelevel").asString();
     std::string fileName = "bkg-";
@@ -595,6 +598,68 @@ void MainScene::enableTextBoardAt( Point switchTile )
 
 }
 
+void MainScene::enableLockAt( const Point& switchTile )
+{
+    assert(mExitObject != nullptr);
+    
+    //Check if player ended up in an exit tile
+    auto &exits = mExitObject->getObjects();
+    for (auto& exit : exits)
+    {
+        ValueMap& dict = exit.asValueMap();
+
+        // discard not lock objects
+        if( dict["name"].asString().compare("lock") != 0 )
+            continue;
+
+        // ignore lock in other positions
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+        
+        int posx = x / width;
+        int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
+        Point nonIsoCoor = Point(posx, posy);
+        
+        if( nonIsoCoor != switchTile )
+            continue;
+        
+
+        // get name of the key that opens the door
+        auto keyName = dict["keyName"].asString();
+
+        if( GameState::getInstance()->getPlayerHasKey() )
+        {
+
+            // get door tile and exit tiles from the lock object
+            auto doorTile = Point(dict["doorx"].asInt(),
+                    dict["doory"].asInt());
+            auto exitTile = Point(dict["exitx"].asInt(),
+                    dict["exity"].asInt());
+
+            // GID to open door
+            mDoorLayer->setTileGID(GID_L2_OPENDOOR, doorTile);
+            
+            // change meta from collidable to exit
+            mMetaLayer->setTileGID(GID_METAEXIT, exitTile );
+            
+            // change object prop. open to true: ?
+         
+            
+            //TODO: play door open fx
+            
+            
+            
+
+        }
+        
+
+    }
+
+    // update changed objects
+//    mExitObject->setObjects(exits);
+}
 Point MainScene::getSpawnTile()
 {
 
