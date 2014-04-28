@@ -40,23 +40,27 @@
  </layer>
  <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAPYEbC6Hx0zIimjpC5hMxDtnewAwA+XABE
+   eJxjYKAPYEbC6Hx0zIimDhkwYTGXkHnI9g52AABAHABG
   </data>
  </layer>
  <layer name="characters" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFgwkAAAGQAAE=
+   eJxjYBgcgHegHTBIAAAO+AAO
   </data>
  </layer>
  <objectgroup name="exits" width="10" height="10">
   <object name="exit" type="toEgo1" x="336" y="144" width="48" height="48">
    <properties>
     <property name="destination" value="superEgo-level1"/>
-    <property name="startx" value="1"/>
-    <property name="starty" value="8"/>
+    <property name="startx" value="7"/>
+    <property name="starty" value="7"/>
    </properties>
   </object>
   <object name="spawn" type="spawn" x="48" y="192" width="48" height="48"/>
-  <object name="textboard" type="textA" x="192" y="192" width="48" height="48"/>
+  <object name="textboard" type="textA" x="192" y="192" width="48" height="48">
+   <properties>
+    <property name="text" value="the mind creates barriers for the will"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

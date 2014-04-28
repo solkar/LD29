@@ -232,6 +232,15 @@ void MainScene::loadMap( std::string name)
     
 }
 
+void MainScene::setPlayerInSpawnPoint()
+{
+    Point spawnCell =  this->getSpawnTile();
+    
+    // load player avatar
+    mHero->setPosition( this->positionForTileCoord( spawnCell ) ); //hero initial position
+
+}
+
 Point MainScene::tileCoordForPosition(Point position) {
 
     float screenX = position.x - mTileMap->getMapSize().width * mTileSize.width * 0.5;
@@ -312,7 +321,6 @@ bool MainScene::tileIsExit( Point tile )
         Point exitTile = this->tileCoordForPosition(Point(x, y));
         
         if (nonIsoCoor == tile) {
-            auto name = dict["destination"].asString();
             Point heroPos = this->positionForTileCoord( Point( dict["startx"].asFloat() ,
                                   dict["starty"].asFloat() ) );
             

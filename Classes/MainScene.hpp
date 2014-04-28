@@ -71,6 +71,7 @@ public:
     
     Sprite* getHero();
     void loadMap( std::string name );
+    void setPlayerInSpawnPoint();
 
     void enableRockAtEgo();
     void enableSwitchAt( Point tile );

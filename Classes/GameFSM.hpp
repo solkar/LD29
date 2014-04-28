@@ -48,6 +48,7 @@ private:
     bool mWaitAck;
     
     void loadMap(const std::string mapName );
+    void spawnPlayerAction();
 
     // Game layer state
     MainScene* mGameLayer;

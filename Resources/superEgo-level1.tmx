@@ -35,7 +35,7 @@
  </layer>
  <layer name="characters" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBh4wDfQDiAAxOhoFwAZgAAl
+   eJxjYBh4wDfQDhhEAAAQOAAP
   </data>
  </layer>
  <objectgroup name="exits" width="10" height="10">
@@ -54,5 +54,6 @@
     <property name="targety" value="3"/>
    </properties>
   </object>
+  <object name="spawn" x="96" y="336" width="48" height="48"/>
  </objectgroup>
 </map>
