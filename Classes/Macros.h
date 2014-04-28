@@ -25,7 +25,13 @@
 #define GID_KEYL2 23
 #define GID_L2_OPENDOOR 60
 
-//#define SKIP_MAINMENU
+#define GID_SWITCHOFF 49
+#define GID_SWITCHON 50
+#define GID_CHAOSDOOR_L_OPEN 62
+
+#define SKIP_MAINMENU
+
+#define PLAYER_SPEED 0.3f // time to complete one tile shift
 
 //#define HASKEY_ALWAYS_TRUE
 

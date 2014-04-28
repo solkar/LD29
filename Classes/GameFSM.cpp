@@ -9,6 +9,8 @@
 #include "GameFSM.hpp"
 #include "MainScene.hpp"
 #include "GameState.hpp"
+#include "Macros.h"
+
 
 #pragma mark - Init
 GameFSM* GameFSM::create()
@@ -207,16 +209,16 @@ void GameFSM::movePlayerAction( Point screenPosition )
     
     // Animate the player
     auto moveAction = Sequence::create(
-                                       MoveTo::create(0.4 ,screenPosition),
+                                       MoveTo::create( PLAYER_SPEED ,screenPosition),
                                        //CallFunc::create( CC_CALLBACK_0(GameScene::heroFinishedWalking,this)),
                                        NULL);
     
     // Play actions
     if( mGameLayer->getHero()->getNumberOfRunningActions() == 0 )
     {
-    mGameLayer->getHero()->runAction(moveAction);
+        mGameLayer->getHero()->runAction(moveAction);
         //mHero->setPosition( position );
-       }
+    }
     
 
     //   finished

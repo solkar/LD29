@@ -79,12 +79,12 @@
  </layer>
  <layer name="doors" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAOsCNTnwWV7B8KwJ4INQCVXAC2
+   eJxjYKAOsCNTnwWV7B9IYE9FswCfNAC2
   </data>
  </layer>
  <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYGBgYMaDGaE0AxKNC6Crw2cuLvOYcJjHRIJ56OZSQx0+exmx+AOXeYQwAIjoALU=
+   eJxjYGBgYMaDGaE0AxKNC6Crw2cuLvOYcJjHRIJ56OaSq46RAn/gspcQBgCImAC1
   </data>
  </layer>
  <layer name="characters" width="10" height="10">

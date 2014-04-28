@@ -113,6 +113,8 @@ private:
 
     Point getSpawnTile();
     Sprite* mBackground;
+
+    void updateSwitches( TMXLayer* layer );
 };
 
 class MainSceneLoader : public cocosbuilder::LayerLoader {

@@ -15,6 +15,8 @@
 #define FIRST_MAP "hall1"
 //#define FIRST_MAP "ego-level1"
 
+//#define FAKE_STONE // ego-l1
+
 USING_NS_CC;
 USING_NS_CC_EXT;
 using namespace cocosbuilder;
@@ -73,9 +75,9 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
 
     // load init map
     mTileMap = nullptr;
-    //this->loadMap("ego-level1");
+    this->loadMap("ego-level1");
     //this->loadMap( FIRST_MAP ); // NG, can't pass a constant
-    this->loadMap( "hall1" );
+    //this->loadMap( "hall1" );
     //this->loadMap( "superEgo-level1" );
    
     // player has no key
@@ -203,27 +205,12 @@ void MainScene::loadMap( std::string name)
         mSpawnPoint = Point( x + width * 0.5, y + height * 0.5 );
     }
     
-    // load layer from memory
-    //mCharacterLayer = GameState::getInstance()->getPersistentMapData(mTileMap->getProperty("name").asString());
-    //if( mCharacterLayer == nullptr)
-    //{
-        //mCharacterLayer = mTileMap->getLayer("characters"); // load form file
-    //}
     
-    // Id level, load character from Ego level
+    /** Id level mirrors objects in Ego level **/
     if(mTileMap->getProperty("name").asString().compare("id-level1") != 0 )
     {
         mCharacterLayer = mTileMap->getLayer("characters"); // load this layer
     }else{
-        /** reuse layer **/
-//        // load layer from memory
-//        mCharacterLayer = GameState::getInstance()->getPersistentLayerData("ego-character"); // load memory, shared with ego level
-//
-//        // replace layer in Id for the one in Ego
-//        if( mCharacterLayer != nullptr){
-//            mTileMap->removeChild(mTileMap->getLayer("characters"));
-//            mTileMap->addChild(mCharacterLayer );
-//        }
         
         /** duplicate layer properties **/
          mCharacterLayer = mTileMap->getLayer("characters"); // load from TileMap
@@ -231,6 +218,8 @@ void MainScene::loadMap( std::string name)
         // get layer from ego level
         auto egoLayer = GameState::getInstance()->getPersistentLayerData("ego-character");
         this->copyGID( egoLayer , mCharacterLayer );
+
+        this->updateSwitches( mCharacterLayer );
     }
 
 
@@ -259,6 +248,12 @@ void MainScene::loadMap( std::string name)
     mBackground->setSpriteFrame(Sprite::create(fileName)->getSpriteFrame());
 
 
+#ifdef FAKE_STONE
+    if( mTileMap->getProperty("name").asString().compare("ego-level1") == 0 )
+    {
+        mCharacterLayer->setTileGID( GID_ROCK, Point(5,5) );
+    }
+#endif
     
 }
 
@@ -393,7 +388,7 @@ bool MainScene::tileIsBlockedMobile( Point tile )
         
         // shift position of the mobile sprite
         auto shiftAction = Sequence::create(
-                MoveBy::create(0.4, 
+                MoveBy::create(PLAYER_SPEED, 
                     positionForTileCoord(nextTile)- positionForTileCoord(tile)),
                 CallFunc::create( 
                     CC_CALLBACK_0( MainScene::swapGID, this,  mCharacterLayer, tile, nextTile)),
@@ -697,6 +692,26 @@ Point MainScene::getSpawnTile()
 void MainScene::removeKeyFromMap( const Point& tile)
 {
     mCharacterLayer->setTileGID(GID_EMPTY, tile );
+
+}
+
+void MainScene::updateSwitches( TMXLayer * layer )
+{
+    
+    // hard coded
+    Point idl1SwitchTile = Point( 4 , 5 );
+   if( layer->getTileGIDAt( idl1SwitchTile ) == GID_ROCK )
+   {
+       // get floor layer
+       auto floorLayer = mTileMap->getLayer("floor");
+       
+       // change switch from off to on
+       floorLayer->setTileGID(GID_SWITCHON, idl1SwitchTile );
+       
+       // change door to open
+       mTileMap->getLayer("doors")->setTileGID(GID_CHAOSDOOR_L_OPEN, Point(2,3));
+   }
+
 
 }
 #pragma mark - Controls
