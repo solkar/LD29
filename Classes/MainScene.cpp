@@ -1,4 +1,4 @@
-
+//
 //  MainScene.cpp
 //  LD29
 //
@@ -492,6 +492,10 @@ void MainScene::copyGID( TMXLayer* originLayer, TMXLayer* destinationLayer )
             auto originData = originLayer->getTileGIDAt(Point( i, j));
             if( originData == GID_ROCK){
                 destinationLayer->setTileGID(GID_ROCK, Point(i, j));
+                auto sprite = destinationLayer->getTileAt(Point(i,j));
+                sprite->setOpacity(168);
+                
+
             }
         }
 
