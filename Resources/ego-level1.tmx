@@ -2,12 +2,18 @@
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="96" tileheight="48">
  <properties>
   <property name="name" value="ego-level1"/>
+  <property name="psychelevel" value="ego"/>
  </properties>
  <tileset firstgid="1" name="meta-tiles" tilewidth="96" tileheight="48">
   <image source="meta-tiles.png" width="96" height="144"/>
   <tile id="0">
    <properties>
-    <property name="mobile" value="true"/>
+    <property name="exit" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="switch" value="true"/>
    </properties>
   </tile>
   <tile id="2">
@@ -17,19 +23,19 @@
   </tile>
  </tileset>
  <tileset firstgid="4" name="characters-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
-  <image source="characters-tileset.png" width="512" height="512"/>
+  <image source="characters-tileset.png" width="512" height="1024"/>
   <tile id="8">
    <properties>
     <property name="mobile" value="true"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="19" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
+ <tileset firstgid="39" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
   <image source="slab-tileset.png" width="128" height="512"/>
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFIgy4gSgBTAt1wkSoYx5A95GiDhkw4xAHAFjIBW4=
+   eJxjYEAFGgy4gSYBTAt16kSoYx5A95GiDhkw4xAHAHvECpY=
   </data>
  </layer>
  <layer name="meta" width="10" height="10">
@@ -39,7 +45,7 @@
  </layer>
  <layer name="characters" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAMcFOon4dC/bQELANgJwAekAAc
+   eJxjYEAFjAzEAZg6YSLVkwsYGYh3E7WB0ADYCQAnXAAq
   </data>
  </layer>
  <objectgroup name="exits" width="10" height="10">
@@ -58,6 +64,5 @@
    </properties>
   </object>
   <object name="spawn" type="spawn" x="144" y="288" width="48" height="48"/>
-  <object x="240" y="192"/>
  </objectgroup>
 </map>

@@ -284,6 +284,13 @@ bool MainScene::tileIsExit( Point tile )
         float width = dict["width"].asFloat();
         float height = dict["height"].asFloat();
         
+        // ignore if not exit
+        auto name = dict["name"].asString();
+        if( name.compare("exit") != 0)
+            continue;
+
+
+
         int posx = x / width;
         int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
         Point nonIsoCoor = Point(posx, posy);
@@ -348,6 +355,12 @@ bool MainScene::tileIsBlockedMobile( Point tile )
     }
 
 
+
+}
+
+bool MainScene::tileIsSwitch( Point tile )
+{
+  return tileHasProperty( tile, "switch", mMetaLayer );
 
 }
 
@@ -435,6 +448,64 @@ void MainScene::copyGID( TMXLayer* originLayer, TMXLayer* destinationLayer )
 
     }
         
+}
+
+void MainScene::enableRockAtEgo()
+{
+    // get layer from memory
+    auto layer =  GameState::getInstance()->getPersistentLayerData("ego-character"); 
+    layer->setTileGID( GID_ROCK, Point( 7 , 7 ) );
+
+    // save data
+    GameState::getInstance()->setPersistentLayerData( "ego-character", layer );
+    
+
+
+}
+
+void MainScene::enableSwitchAt( Point switchTile )
+{
+    assert(mExitObject != nullptr);
+    
+    //Check if player ended up in an exit tile
+    auto &exits = mExitObject->getObjects();
+    for (auto& exit : exits)
+    {
+        ValueMap& dict = exit.asValueMap();
+
+        // discard not switch objects
+        if( dict["name"].asString().compare("switch") != 0 )
+            continue;
+
+        // discard wrong position
+        float x = dict["x"].asFloat();
+        float y = dict["y"].asFloat();
+        float width = dict["width"].asFloat();
+        float height = dict["height"].asFloat();
+        
+        int posx = x / width;
+        int posy = ((mTileMap->getMapSize().height * height) - y) / (height) - 1;
+        Point nonIsoCoor = Point(posx, posy);
+        
+        if( nonIsoCoor != switchTile )
+            continue;
+        
+        // get data from switch object
+        auto layerName = dict["targetLayer"].asString();
+        int GIDValue = dict["GID"].asInt();
+        Point targetTile = Point( dict["targetx"].asInt(), dict["targety"].asInt() );
+
+        // get layer from memory
+        auto layer =  GameState::getInstance()->getPersistentLayerData( layerName );
+        assert( layer != nullptr);
+        layer->setTileGID( GIDValue , targetTile );
+
+        // save data
+        GameState::getInstance()->setPersistentLayerData( layerName , layer );
+        
+
+    }
+
 }
 
 #pragma mark - Controls

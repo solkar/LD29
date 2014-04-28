@@ -173,6 +173,84 @@
                 <key>sourceSize</key>
                 <string>{96,144}</string>
             </dict>
+            <key>5-mask-child-l.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{296,294},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>5-mask-child-r.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{394,294},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>5-mask-father-l.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>5-mask-father-r.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{100,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>5-mask-master-l.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{198,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>5-mask-master-r.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{296,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -181,9 +259,9 @@
             <key>realTextureFileName</key>
             <string>characters-tileset.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a7878cb4b928981f26242044272da11e:155fcc8528d9f58b2a20b8dad3ae5a2e:165544c4e188d86d10fabc5ed2f5219f$</string>
+            <string>$TexturePacker:SmartUpdate:b2e8180cedc0ce48f4bc6efa5a933dd7:a7ec2d519574288475af54572ac1dad0:165544c4e188d86d10fabc5ed2f5219f$</string>
             <key>textureFileName</key>
             <string>characters-tileset.png</string>
         </dict>

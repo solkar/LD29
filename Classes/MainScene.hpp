@@ -62,6 +62,7 @@ public:
     bool tileIsCollidable( Point tile );
     bool tileIsExit( Point tile );
     bool tileIsBlockedMobile( Point tile );
+    bool tileIsSwitch( Point tile );
     std::string getMapNameForExitInTile( Point tile );
 
     bool tileHasProperty( Point tile, const std::string property , TMXLayer* layer);
@@ -70,6 +71,9 @@ public:
     
     Sprite* getHero();
     void loadMap( std::string name );
+
+    void enableRockAtEgo();
+    void enableSwitchAt( Point tile );
 private:
     
     void initTouchControl();

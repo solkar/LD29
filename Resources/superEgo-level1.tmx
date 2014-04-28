@@ -2,29 +2,40 @@
 <map version="1.0" orientation="isometric" width="10" height="10" tilewidth="96" tileheight="48">
  <properties>
   <property name="name" value="superEgo-level1"/>
+  <property name="psychelevel" value="superego"/>
  </properties>
  <tileset firstgid="1" name="meta-tiles" tilewidth="96" tileheight="48">
   <image source="meta-tiles.png" width="96" height="144"/>
+  <tile id="0">
+   <properties>
+    <property name="exit" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="switch" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="4" name="characters-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
-  <image source="characters-tileset.png" width="512" height="512"/>
+  <image source="characters-tileset.png" width="512" height="1024"/>
  </tileset>
- <tileset firstgid="19" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
+ <tileset firstgid="39" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
   <image source="slab-tileset.png" width="128" height="512"/>
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFIgy4gSgBPKoOvzpiAABETAVV
+   eJxjYEAFGgy4gSYBPKoOvzpiAABUiApp
   </data>
  </layer>
  <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYCYSEwKj6vCrIwYDAFbIAG0=
+   eJxjZmBgYEbCjGh8ZIwMGBkwATZ12AA2dUxUNm8wqiMGAwBXMABu
   </data>
  </layer>
  <layer name="characters" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBiZgG+gHYADAAAJ4AAP
+   eJxjYBh4wDfQDiAAxOhoFwAZgAAl
   </data>
  </layer>
  <objectgroup name="exits" width="10" height="10">
@@ -33,6 +44,14 @@
     <property name="destination" value="ego-level1"/>
     <property name="startx" value="7"/>
     <property name="starty" value="7"/>
+   </properties>
+  </object>
+  <object name="switch" type="addToRock" x="192" y="144" width="48" height="48">
+   <properties>
+    <property name="GID" value="12"/>
+    <property name="targetLayer" value="ego-character"/>
+    <property name="targetx" value="2"/>
+    <property name="targety" value="3"/>
    </properties>
   </object>
  </objectgroup>

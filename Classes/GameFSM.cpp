@@ -165,6 +165,13 @@ void GameFSM::checkCollision( Point playerPos )
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::movePlayerAction , this , playerPos ) );
         return;
     }
+
+    if( mGameLayer->tileIsSwitch( tileCoord ) ){
+
+        // enable rock
+        //mGameLayer->enableRockAtEgo();
+        mGameLayer->enableSwitchAt( tileCoord );
+    }
     
     m_pBrain->popState();
     m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState, this ) );
