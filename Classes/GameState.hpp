@@ -38,12 +38,19 @@ public:
 
     void setPlayerHasKey( bool );
     bool getPlayerHasKey();
+
+    void setSwitchPath( bool );
+    bool getSwitchPath();
+    void setSwitchPathSize( const int& size );
+    int getSwitchPathSize();
     
 private:
     cocos2d::Map<std::string, cocos2d::TMXLayer*> m_mLayerData;
     cocos2d::Map<std::string, cocos2d::TMXTiledMap*> m_mMapData;
 
     bool mPlayerHasKey;
+    bool mSwitchPath;
+    int mSwitchPathSize;
 
 };
 

@@ -408,8 +408,27 @@ bool MainScene::tileIsBlockedMobile( Point tile )
 
 bool MainScene::tileIsSwitch( Point tile )
 {
-  return tileHasProperty( tile, "switch", mMetaLayer );
+    bool tileIsSwitch = tileHasProperty( tile, "switch", mMetaLayer );
+    
+    // detect path at Super Ego
+    if( tileIsSwitch == true )
+    {
+        if( tile == Point( 7, 8 ) 
+                && mTileMap->getProperty("name").asString().compare("superEgo-level1") == 0 )
+        {
 
+            GameState::getInstance()->setSwitchPath( true );
+        }
+
+        int size = GameState::getInstance()->getSwitchPathSize( ) + 1;
+        GameState::getInstance()->setSwitchPathSize( size );
+    }else{
+
+            GameState::getInstance()->setSwitchPath( false );
+            GameState::getInstance()->setSwitchPathSize( 0 );
+    }
+
+  return tileIsSwitch;
 }
 
 
@@ -423,7 +442,8 @@ bool MainScene::tileHasProperty( Point tile , const std::string propertyName, TM
             return true;
         }
     }
-
+    
+    return false;
 }
 
 std::string MainScene::getMapNameForExitInTile( Point tile )
@@ -543,6 +563,37 @@ void MainScene::enableSwitchAt( Point switchTile )
         if( nonIsoCoor != switchTile )
             continue;
         
+        // special swith at S.Ego level
+        if( switchTile == Point( 5 , 4 )
+                && mTileMap->getProperty("name").asString().compare("superEgo-level1") == 0 )
+        {
+            if( GameState::getInstance()->getSwitchPathSize() != 7 )
+            {
+                // path corrupted
+                mTopLabel->setString("It's not working");
+                mTopBackground->setVisible(true);
+                return;
+
+            }else{
+                // feedback
+                mTopLabel->setString("Guilt rock dropped");
+                mTopBackground->setVisible(true);
+                
+                
+                //
+                // change switch sprite to enabled
+                
+                // get floor layer
+                auto floorLayer = mTileMap->getLayer("floor");
+                // change switch from off to on
+                floorLayer->setTileGID(GID_SWITCHON, switchTile );
+                
+            }
+
+        }
+        
+        //
+        // add object specified in the object
         // get data from switch object
         auto layerName = dict["targetLayer"].asString();
         int GIDValue = dict["GID"].asInt();
@@ -556,6 +607,7 @@ void MainScene::enableSwitchAt( Point switchTile )
         // save data
         GameState::getInstance()->setPersistentLayerData( layerName , layer );
         
+
 
     }
 

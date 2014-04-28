@@ -108,3 +108,24 @@ bool GameState::getPlayerHasKey()
 #endif
     return mPlayerHasKey;
 }
+
+void GameState::setSwitchPath( bool value ){ 
+    
+
+    mSwitchPath = value; 
+}
+
+bool GameState::getSwitchPath()
+{ 
+    return mSwitchPath;
+}
+
+void GameState::setSwitchPathSize( const int& value ){ 
+
+    mSwitchPathSize = value; 
+}
+
+int GameState::getSwitchPathSize()
+{ 
+    return mSwitchPathSize;
+}
