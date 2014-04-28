@@ -274,7 +274,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:014bb996c1cd481f3f6d7bc6e8783a51:ccdf2f38389ea0897e738cde14460940:165544c4e188d86d10fabc5ed2f5219f$</string>
+            <string>$TexturePacker:SmartUpdate:6db88ef25f18090b08471ce843d428e8:b1aa44f54d3fe8ef4cb7e516c3f259f4:165544c4e188d86d10fabc5ed2f5219f$</string>
             <key>textureFileName</key>
             <string>characters-tileset.png</string>
         </dict>

@@ -52,6 +52,7 @@ public:
 private:
     
     void onPlayButton(Ref * sender, cocos2d::extension::Control::EventType pControlEvent);
+    void onPlayClick(Ref * sender);
     
     virtual void update( float dt );
     

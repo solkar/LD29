@@ -59,12 +59,12 @@ void MainMenu::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * no
 
 
 SEL_MenuHandler MainMenu::onResolveCCBCCMenuItemSelector(Ref * pTarget, const char * pSelectorName) {
-//    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"onMenuItemClick",MainMenu::onMenuItemClick);
+    CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this,"onPlayClick",MainMenu::onPlayClick);
     return NULL;
 }
 
 Control::Handler MainMenu::onResolveCCBCCControlSelector(Ref * pTarget, const char * pSelectorName) {
-    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onPlayButton", MainMenu::onPlayButton);
+    //CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onPlayButton", MainMenu::onPlayButton);
     return NULL;
 }
 
@@ -74,10 +74,10 @@ bool MainMenu::onAssignCCBMemberVariable(Ref * pTarget, const char * pMemberVari
 }
 
 
-//void MainMenu::onMenuItemClick(Ref * sender){
-//
-//    GameManager::getInstance()->getMissionFsm()->setWaitAck( true );
-//}
+void MainMenu::onPlayClick(Ref * sender)
+{
+    Director::getInstance()->replaceScene(MainScene::createScene());
+}
 
 void MainMenu::onPlayButton(Ref * sender, Control::EventType pControlEvent)
 {
