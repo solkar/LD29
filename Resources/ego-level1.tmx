@@ -104,12 +104,12 @@
   <object name="spawn" type="spawn" x="336" y="336" width="48" height="48"/>
   <object name="textboard" type="master" x="96" y="336" width="48" height="48">
    <properties>
-    <property name="text" value="make then learn to make"/>
+    <property name="text" value="I'm the master,\ntherefore I teach"/>
    </properties>
   </object>
   <object name="textboard" type="father" x="288" y="96" width="48" height="48">
    <properties>
-    <property name="text" value="my will is your will"/>
+    <property name="text" value="I'm the father,\nmy will, your will"/>
    </properties>
   </object>
   <object name="exit" type="toL2" x="48" y="0" width="48" height="48">

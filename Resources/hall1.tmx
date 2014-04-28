@@ -46,7 +46,7 @@
    eJxjYKAfsKGjXUMVAABGAAA9
   </data>
  </layer>
- <layer name="meta" width="10" height="10">
+ <layer name="meta" width="10" height="10" visible="0">
   <data encoding="base64" compression="zlib">
    eJxjYMAOmJEwLnEYZsShDhsfmzgTFnlC+olVx0SEOnRMjLvRAS79pAIAYXQAbA==
   </data>
@@ -56,7 +56,7 @@
    eJxjYBhYwEemPl6qumLwAAAbaAAc
   </data>
  </layer>
- <objectgroup name="exits" width="10" height="10">
+ <objectgroup name="exits" width="10" height="10" visible="0">
   <object name="exit" type="toHall2" x="336" y="48" width="48" height="48">
    <properties>
     <property name="destination" value="hall2"/>

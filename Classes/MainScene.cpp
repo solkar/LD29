@@ -75,9 +75,9 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
 
     // load init map
     mTileMap = nullptr;
-    this->loadMap("ego-level1");
+    //this->loadMap("ego-level1");
     //this->loadMap( FIRST_MAP ); // NG, can't pass a constant
-    //this->loadMap( "hall1" );
+    this->loadMap( "hall1" );
     //this->loadMap( "superEgo-level1" );
    
     // player has no key
