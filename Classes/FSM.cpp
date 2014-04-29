@@ -27,7 +27,7 @@ void FSM::update( float delta )
 
 FsmState FSM::popState()
 {
-    auto state = m_stack.back();
+    FsmState state = m_stack.back();
     m_stack.pop_back();
     
     return state;
@@ -38,7 +38,7 @@ void FSM::pushState( FsmState newState)
 }
 FsmState FSM::getCurrentState()
 {
-    return m_stack.size() > 0 ? m_stack.back() : NULL;
+    return m_stack.size() > 0 ? m_stack.back() : nullptr;
 }
 
 
