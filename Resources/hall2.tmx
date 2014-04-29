@@ -67,7 +67,7 @@
   <object name="spawn" type="spawn" x="48" y="192" width="48" height="48"/>
   <object name="textboard" type="textA" x="192" y="192" width="48" height="48">
    <properties>
-    <property name="text" value="the mind creates barriers for the will"/>
+    <property name="text" value="Ego lays after this portal"/>
    </properties>
   </object>
  </objectgroup>

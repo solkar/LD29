@@ -10,7 +10,7 @@
 #include "MainScene.hpp"
 #include "GameState.hpp"
 #include "Macros.h"
-
+#include "MapTransition.h"
 
 #pragma mark - Init
 GameFSM* GameFSM::create()
@@ -232,13 +232,15 @@ void GameFSM::loadMap(const std::string mapName )
     
     this->mGameLayer->loadMap(mapName);
     
+    Director::getInstance()->pushScene( MapTransition::createScene());
+    
     // forward to idle state
     m_pBrain->popState();
 }
 
 void GameFSM::spawnPlayerAction()
 {
-    
+
     this->mGameLayer->setPlayerInSpawnPoint();
 
     m_pBrain->popState();
