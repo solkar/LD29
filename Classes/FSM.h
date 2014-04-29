@@ -10,7 +10,9 @@
 #define __SamuraiSlash__FSM__
 
 #include <iostream>
+#include <functional>
 #include <vector>
+
 
 typedef std::function<void( float )> FsmState;
 

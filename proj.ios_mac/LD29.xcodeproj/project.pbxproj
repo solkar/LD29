@@ -96,8 +96,6 @@
 		D86500E4190F108100016980 /* menu-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500DF190F108100016980 /* menu-background.png */; };
 		D86500E5190F108100016980 /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500E0190F108100016980 /* play-button.png */; };
 		D86500E6190F108100016980 /* play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500E0190F108100016980 /* play-button.png */; };
-		D86500EA190F21CC00016980 /* MapTransition.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D86500E9190F21CC00016980 /* MapTransition.ccbi */; };
-		D86500EB190F21CC00016980 /* MapTransition.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D86500E9190F21CC00016980 /* MapTransition.ccbi */; };
 		D86500EE190F225600016980 /* MapTransition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D86500EC190F225600016980 /* MapTransition.cpp */; };
 		D86500EF190F225600016980 /* MapTransition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D86500EC190F225600016980 /* MapTransition.cpp */; };
 		D86500F1190F231D00016980 /* transicion.png in Resources */ = {isa = PBXBuildFile; fileRef = D86500F0190F231D00016980 /* transicion.png */; };
@@ -108,14 +106,16 @@
 		D8681381190E93A800D7076C /* door-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = D868137D190E93A800D7076C /* door-tileset.png */; };
 		D8907A2A190D4EBE0016C464 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8907A28190D4EBE0016C464 /* GameState.cpp */; };
 		D8907A2B190D4EBE0016C464 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8907A28190D4EBE0016C464 /* GameState.cpp */; };
-		D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */; };
-		D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */; };
+		D89250D9190FD0B80039DF78 /* HudLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D5190FD0B80039DF78 /* HudLayer.ccbi */; };
+		D89250DA190FD0B80039DF78 /* HudLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D5190FD0B80039DF78 /* HudLayer.ccbi */; };
+		D89250DB190FD0B80039DF78 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D6190FD0B80039DF78 /* MainMenu.ccbi */; };
+		D89250DC190FD0B80039DF78 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D6190FD0B80039DF78 /* MainMenu.ccbi */; };
+		D89250DD190FD0B80039DF78 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D7190FD0B80039DF78 /* MainScene.ccbi */; };
+		D89250DE190FD0B80039DF78 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D7190FD0B80039DF78 /* MainScene.ccbi */; };
+		D89250DF190FD0B80039DF78 /* MapTransition.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D8190FD0B80039DF78 /* MapTransition.ccbi */; };
+		D89250E0190FD0B80039DF78 /* MapTransition.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D89250D8190FD0B80039DF78 /* MapTransition.ccbi */; };
 		D8A0DECE190AC88B00B57683 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DECC190AC88B00B57683 /* MainMenu.cpp */; };
 		D8A0DECF190AC88B00B57683 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DECC190AC88B00B57683 /* MainMenu.cpp */; };
-		D8A0DEE9190AD57800B57683 /* HudLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */; };
-		D8A0DEEA190AD57800B57683 /* HudLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */; };
-		D8A0DEEB190AD57800B57683 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE8190AD57800B57683 /* MainScene.ccbi */; };
-		D8A0DEEC190AD57800B57683 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = D8A0DEE8190AD57800B57683 /* MainScene.ccbi */; };
 		D8A0DEEF190AD5D200B57683 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEED190AD5D200B57683 /* MainScene.cpp */; };
 		D8A0DEF0190AD5D200B57683 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEED190AD5D200B57683 /* MainScene.cpp */; };
 		D8A0DEF6190AE02F00B57683 /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8A0DEF4190AE02F00B57683 /* HudLayer.cpp */; };
@@ -357,7 +357,6 @@
 		D86500DE190F108100016980 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		D86500DF190F108100016980 /* menu-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-background.png"; sourceTree = "<group>"; };
 		D86500E0190F108100016980 /* play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button.png"; sourceTree = "<group>"; };
-		D86500E9190F21CC00016980 /* MapTransition.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapTransition.ccbi; sourceTree = "<group>"; };
 		D86500EC190F225600016980 /* MapTransition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapTransition.cpp; path = ../Classes/MapTransition.cpp; sourceTree = "<group>"; };
 		D86500ED190F225600016980 /* MapTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapTransition.h; path = ../Classes/MapTransition.h; sourceTree = "<group>"; };
 		D86500F0190F231D00016980 /* transicion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transicion.png; sourceTree = "<group>"; };
@@ -365,11 +364,12 @@
 		D868137D190E93A800D7076C /* door-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-tileset.png"; sourceTree = "<group>"; };
 		D8907A28190D4EBE0016C464 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
 		D8907A29190D4EBE0016C464 /* GameState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
-		D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainMenu.ccbi; sourceTree = "<group>"; };
+		D89250D5190FD0B80039DF78 /* HudLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = HudLayer.ccbi; sourceTree = "<group>"; };
+		D89250D6190FD0B80039DF78 /* MainMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainMenu.ccbi; sourceTree = "<group>"; };
+		D89250D7190FD0B80039DF78 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
+		D89250D8190FD0B80039DF78 /* MapTransition.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MapTransition.ccbi; sourceTree = "<group>"; };
 		D8A0DECC190AC88B00B57683 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenu.cpp; path = ../Classes/MainMenu.cpp; sourceTree = "<group>"; };
 		D8A0DECD190AC88B00B57683 /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MainMenu.hpp; path = ../Classes/MainMenu.hpp; sourceTree = "<group>"; };
-		D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = HudLayer.ccbi; sourceTree = "<group>"; };
-		D8A0DEE8190AD57800B57683 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 		D8A0DEED190AD5D200B57683 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
 		D8A0DEEE190AD5D200B57683 /* MainScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MainScene.hpp; path = ../Classes/MainScene.hpp; sourceTree = "<group>"; };
 		D8A0DEF1190AD68000B57683 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = ../Classes/Macros.h; sourceTree = "<group>"; };
@@ -592,6 +592,10 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D89250D5190FD0B80039DF78 /* HudLayer.ccbi */,
+				D89250D6190FD0B80039DF78 /* MainMenu.ccbi */,
+				D89250D7190FD0B80039DF78 /* MainScene.ccbi */,
+				D89250D8190FD0B80039DF78 /* MapTransition.ccbi */,
 				D86500F0190F231D00016980 /* transicion.png */,
 				D86500DE190F108100016980 /* logo.png */,
 				D86500DF190F108100016980 /* menu-background.png */,
@@ -623,21 +627,9 @@
 				D80CC6E2190C2F07000272B9 /* id-level1.tmx */,
 				D80CC6E3190C2F07000272B9 /* meta-tiles.png */,
 				D80CC6E4190C2F07000272B9 /* superEgo-level1.tmx */,
-				D8A0DEC4190AC66D00B57683 /* CCB */,
 			);
 			name = Resources;
 			path = ../Resources;
-			sourceTree = "<group>";
-		};
-		D8A0DEC4190AC66D00B57683 /* CCB */ = {
-			isa = PBXGroup;
-			children = (
-				D86500E9190F21CC00016980 /* MapTransition.ccbi */,
-				D8A0DEE7190AD57800B57683 /* HudLayer.ccbi */,
-				D8A0DEE8190AD57800B57683 /* MainScene.ccbi */,
-				D8A0DEC7190AC70B00B57683 /* MainMenu.ccbi */,
-			);
-			path = CCB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -804,18 +796,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A0DEE9190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				D80CC6F5190C2F48000272B9 /* 04b-48.fnt in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				D86500CB190E9C7300016980 /* gameover2.tmx in Resources */,
 				D86500E1190F108100016980 /* logo.png in Resources */,
 				D8AF3F25190E1F0100DBAAEB /* hall2.tmx in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				D89250DB190FD0B80039DF78 /* MainMenu.ccbi in Resources */,
 				D80CC6EF190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
 				D86500F1190F231D00016980 /* transicion.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
-				D86500EA190F21CC00016980 /* MapTransition.ccbi in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				D86500D3190EB4F700016980 /* panelInset_beige.png in Resources */,
 				D8AF3F34190E2FBB00DBAAEB /* alagard-48.fnt in Resources */,
@@ -826,11 +817,13 @@
 				D8AF3F30190E2FBB00DBAAEB /* venice-48.fnt in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				D86500D7190ECE6E00016980 /* Champagne.ttf in Resources */,
+				D89250DF190FD0B80039DF78 /* MapTransition.ccbi in Resources */,
 				D868137E190E93A800D7076C /* door-tileset.plist in Resources */,
 				D8B14376190CEEEA00387CD7 /* slab-tileset.plist in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				D8B14379190CEF3200387CD7 /* slab-tileset.png in Resources */,
 				D86500E3190F108100016980 /* menu-background.png in Resources */,
+				D89250DD190FD0B80039DF78 /* MainScene.ccbi in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				D80CC6E7190C2F07000272B9 /* characters-tileset.png in Resources */,
@@ -840,9 +833,7 @@
 				D8AF3F39190E458E00DBAAEB /* bkg-ego.png in Resources */,
 				D86500D0190EB35000016980 /* panelInset_blue.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
-				D8A0DEC8190AC70B00B57683 /* MainMenu.ccbi in Resources */,
 				D8AF3F3D190E458E00DBAAEB /* bkg-superego.png in Resources */,
-				D8A0DEEB190AD57800B57683 /* MainScene.ccbi in Resources */,
 				D80CC6FB190C3410000272B9 /* thick tile-96x144.png in Resources */,
 				D86500E5190F108100016980 /* play-button.png in Resources */,
 				D8AF3F2E190E2FBB00DBAAEB /* venice-48.png in Resources */,
@@ -850,6 +841,7 @@
 				D8AF3F24190E1F0100DBAAEB /* hall1.tmx in Resources */,
 				D86500C9190E9C7300016980 /* gameover1.tmx in Resources */,
 				D8AF3F32190E2FBB00DBAAEB /* alagard-48.png in Resources */,
+				D89250D9190FD0B80039DF78 /* HudLayer.ccbi in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				D8AF3F3B190E458E00DBAAEB /* bkg-id.png in Resources */,
@@ -863,21 +855,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86500E4190F108100016980 /* menu-background.png in Resources */,
+				D89250E0190FD0B80039DF78 /* MapTransition.ccbi in Resources */,
 				D86500D8190ECE6E00016980 /* Champagne.ttf in Resources */,
 				D8681381190E93A800D7076C /* door-tileset.png in Resources */,
 				D8AF3F35190E2FBB00DBAAEB /* alagard-48.fnt in Resources */,
+				D89250DE190FD0B80039DF78 /* MainScene.ccbi in Resources */,
 				D8AF3F29190E218B00DBAAEB /* hall2.tmx in Resources */,
-				D8A0DEEA190AD57800B57683 /* HudLayer.ccbi in Resources */,
 				D80CC6EA190C2F07000272B9 /* ego-level1.tmx in Resources */,
 				D8AF3F28190E218700DBAAEB /* hall1.tmx in Resources */,
 				D868137F190E93A800D7076C /* door-tileset.plist in Resources */,
-				D8A0DEC9190AC70C00B57683 /* MainMenu.ccbi in Resources */,
 				D8AF3F3E190E458E00DBAAEB /* bkg-superego.png in Resources */,
 				D8AF3F2F190E2FBB00DBAAEB /* venice-48.png in Resources */,
 				D80CC6E8190C2F07000272B9 /* characters-tileset.png in Resources */,
 				D86500E2190F108100016980 /* logo.png in Resources */,
 				D80CC6F8190C2F48000272B9 /* 04b-48.png in Resources */,
-				D86500EB190F21CC00016980 /* MapTransition.ccbi in Resources */,
 				D8AF3F3C190E458E00DBAAEB /* bkg-id.png in Resources */,
 				D80CC6EE190C2F07000272B9 /* meta-tiles.png in Resources */,
 				D86500E6190F108100016980 /* play-button.png in Resources */,
@@ -888,10 +879,11 @@
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				D86500F2190F231D00016980 /* transicion.png in Resources */,
 				D80CC6E6190C2F07000272B9 /* characters-tileset.plist in Resources */,
-				D8A0DEEC190AD57800B57683 /* MainScene.ccbi in Resources */,
 				D86500CC190E9C7300016980 /* gameover2.tmx in Resources */,
 				D86500CA190E9C7300016980 /* gameover1.tmx in Resources */,
 				D80CC6F0190C2F07000272B9 /* superEgo-level1.tmx in Resources */,
+				D89250DA190FD0B80039DF78 /* HudLayer.ccbi in Resources */,
+				D89250DC190FD0B80039DF78 /* MainMenu.ccbi in Resources */,
 				D80CC6F6190C2F48000272B9 /* 04b-48.fnt in Resources */,
 				D8B14377190CEEEA00387CD7 /* slab-tileset.plist in Resources */,
 				D86500D4190EB4F700016980 /* panelInset_beige.png in Resources */,
