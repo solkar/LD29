@@ -29,10 +29,12 @@
 #define GID_SWITCHON 50
 #define GID_CHAOSDOOR_L_OPEN 62
 
-//#define SKIP_MAINMENU
 
 #define PLAYER_SPEED 0.3f // time to complete one tile shift
 
+//
+// Debug
+#define SKIP_MAINMENU
 //#define HASKEY_ALWAYS_TRUE
 
 #endif

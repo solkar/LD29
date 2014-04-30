@@ -56,6 +56,8 @@ void GameFSM::setWaitAck( bool value )
 #pragma mark - States
 void GameFSM::initState()
 {
+    m_bIdle = true;
+
 //    CCLOG("[FSM] Init state");
 
 }
@@ -75,11 +77,16 @@ void GameFSM::waitPlayerAck()
 }
 
 #pragma mark - Player input
-void GameFSM::onPlayerInput( Point touchLocation, Point playerPos, Size tileSize )
+void GameFSM::onPlayerInput(const Point& touchLocation, const Point& playerPos, Size tileSize )
 {
 
-    CCLOG("[FSM] Hanle player input");
+    CCLOG("[FSM] Handle player input");
+    
+    // ignore input when state is not idle [initState]
+    if( !m_bIdle )
+        return;
 
+    m_bIdle = false;
 
     //Point diff = touchLocation - playerPos;
     Point diff = this->mGameLayer->tileCoordForPosition( touchLocation ) + Point( 1 , 1 ) 
@@ -109,32 +116,38 @@ void GameFSM::onPlayerInput( Point touchLocation, Point playerPos, Size tileSize
     }
     
     // hero only moves in one direction, one step each
+    Point posUpdate = mGameLayer->getHero()->getPosition();
         if (diff.x > 0) {
-            playerPos.x += tileSize.width * 0.5;
-            playerPos.y -= tileSize.height * 0.5;
+            posUpdate.x += tileSize.width * 0.5;
+            posUpdate.y -= tileSize.height * 0.5;
         } else if( diff.x < 0){
-            playerPos.x -= tileSize.width * 0.5;
-            playerPos.y += tileSize.height * 0.5;
+            posUpdate.x -= tileSize.width * 0.5;
+            posUpdate.y += tileSize.height * 0.5;
         }
 
         if (diff.y > 0) {
-            playerPos.x -= tileSize.width * 0.5;
-            playerPos.y -= tileSize.height * 0.5;
+            posUpdate.x -= tileSize.width * 0.5;
+            posUpdate.y -= tileSize.height * 0.5;
         } else if( diff.y < 0) {
-            playerPos.x += tileSize.width * 0.5;
-            playerPos.y += tileSize.height * 0.5;
+            posUpdate.x += tileSize.width * 0.5;
+            posUpdate.y += tileSize.height * 0.5;
         }
     
 
     //
-    if (playerPos.x <= (tileSize.width * tileSize.width) &&
-            playerPos.y <= (tileSize.height * tileSize.height) &&
-            playerPos.y >= 0 &&
-            playerPos.x >= 0 )
+    if (posUpdate.x <= (tileSize.width * tileSize.width) &&
+            posUpdate.y <= (tileSize.height * tileSize.height) &&
+            posUpdate.y >= 0 &&
+            posUpdate.x >= 0 )
     {
-        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::checkCollision , this, playerPos ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::checkCollision , this, posUpdate ) );
 //        this->setPlayerPosition(playerPos);
     }
+}
+
+void GameFSM::setPlayerStopCallback(const std::function<void()>& func)
+{
+    m_fPlayerStopCallback = func;
 }
 
 void GameFSM::checkCollision( Point playerPos )
@@ -149,6 +162,7 @@ void GameFSM::checkCollision( Point playerPos )
     if( mGameLayer->tileIsCollidable( tileCoord ) ){
         m_pBrain->popState();
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::playerStopCallback , this ) );
         return;
     }
 
@@ -157,6 +171,7 @@ void GameFSM::checkCollision( Point playerPos )
         // mobile is blocked player can't go on
         m_pBrain->popState();
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::playerStopCallback , this ) );
         return;
 
     }
@@ -169,10 +184,15 @@ void GameFSM::checkCollision( Point playerPos )
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState, this ) );
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::spawnPlayerAction , this ) );
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::loadMap , this, destinationMap ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::playerStopCallback , this ) );
         //m_pBrain->pushState( CC_CALLBACK_0( GameFSM::fadePlayerAction , this ) );
         return;
     }
 
+    //
+    // Player is going to move
+    //
+    
     if( mGameLayer->tileIsSwitch( tileCoord ) ){
 
         // enable rock
@@ -182,6 +202,7 @@ void GameFSM::checkCollision( Point playerPos )
         mGameLayer->enableTextBoardAt( tileCoord );
 
         mGameLayer->enableLockAt( tileCoord );
+
     }
 
     
@@ -244,4 +265,12 @@ void GameFSM::spawnPlayerAction()
     this->mGameLayer->setPlayerInSpawnPoint();
 
     m_pBrain->popState();
+}
+
+void GameFSM::playerStopCallback()
+{
+    m_fPlayerStopCallback();
+
+    m_pBrain->popState();
+
 }

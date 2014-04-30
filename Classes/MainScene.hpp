@@ -71,7 +71,7 @@ public:
     void copyGID( TMXLayer* originLayer, TMXLayer* destinationLayer );
     
     Sprite* getHero();
-    void loadMap( std::string name );
+    void loadMap( const std::string& name );
     void setPlayerInSpawnPoint();
 
     void enableRockAtEgo();
@@ -115,6 +115,16 @@ private:
     Sprite* mBackground;
 
     void updateSwitches( TMXLayer* layer );
+    
+    ////
+    // Controls
+public:
+
+private:
+    bool m_bTouchOn;
+    Point m_ptLastTouchPosition;
+    Point m_ptHeroReference;
+    void onPlayerStop();
 };
 
 class MainSceneLoader : public cocosbuilder::LayerLoader {
@@ -123,5 +133,6 @@ public:
     
 protected:
     CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(MainScene);
+
 };
 #endif /* defined(__LD29__MainScene__) */

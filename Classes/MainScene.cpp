@@ -12,8 +12,8 @@
 #include "GameState.hpp"
 #include "Macros.h"
 
-#define FIRST_MAP "hall1"
-//#define FIRST_MAP "ego-level1"
+//#define FIRST_MAP "hall1"
+#define FIRST_MAP "ego-level1"
 
 //#define FAKE_STONE // ego-l1
 
@@ -65,6 +65,8 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
     mGameFsm = GameFSM::create();
     mGameFsm->setGameLayer( this );
 
+    mGameFsm->setPlayerStopCallback(CC_CALLBACK_0( MainScene::onPlayerStop, this ) );
+
     // init touch/mouse input
     this->initTouchControl();
     
@@ -76,8 +78,8 @@ void MainScene::onNodeLoaded(cocos2d::Node * node,  cocosbuilder::NodeLoader * n
     // load init map
     mTileMap = nullptr;
     //this->loadMap("ego-level1");
-    //this->loadMap( FIRST_MAP ); // NG, can't pass a constant
-    this->loadMap( "hall1" );
+    this->loadMap( FIRST_MAP ); // NG, can't pass a constant
+    //this->loadMap( "hall1" );
     //this->loadMap( "superEgo-level1" );
    
     // player has no key
@@ -134,12 +136,18 @@ void MainScene::clearTextBoard()
 void MainScene::update( float dt )
 {
     
+    if( m_bTouchOn )
+    {
+        CCLOG(" call player input");
+        mGameFsm->onPlayerInput( m_ptLastTouchPosition , m_ptHeroReference , mTileSize );
+    }
+
     mGameFsm->update( dt );
     
 }
 
 #pragma mark - TileMap
-void MainScene::loadMap( std::string name)
+void MainScene::loadMap( const std::string& name)
 {
    
     
@@ -173,8 +181,9 @@ void MainScene::loadMap( std::string name)
     if( mTileMap == nullptr)
     {
         // load form file
-        name = name.append(".tmx");
-        mTileMap = TMXTiledMap::create( name );
+        std::string fileName;
+        fileName = fileName.append(name + ".tmx");
+        mTileMap = TMXTiledMap::create( fileName );
     }
     
     // get map from file
@@ -233,19 +242,19 @@ void MainScene::loadMap( std::string name)
     
     // change background
     auto mapType = mTileMap->getProperty("psychelevel").asString();
-    std::string fileName = "bkg-";
+    std::string bckFileName = "bkg-";
     
 //    if( mapType.compare("superego") == 0 ){
-//        fileName="bkg-superego";
+//        bckFileName="bkg-superego";
 //    }else if( mapType.compare("id") == 0 ){
-//        fileName="bkg-superegoid";
+//        bckFileName="bkg-superegoid";
 //    }else{
-//         fileName="bkg-ego";
+//         bckFileName="bkg-ego";
 //    }
-    fileName = fileName.append(mapType + ".png");
+    bckFileName = bckFileName.append(mapType + ".png");
     
     // update sprite frame
-    mBackground->setSpriteFrame(Sprite::create(fileName)->getSpriteFrame());
+    mBackground->setSpriteFrame(Sprite::create(bckFileName)->getSpriteFrame());
 
 
 #ifdef FAKE_STONE
@@ -780,20 +789,28 @@ void MainScene::initTouchControl()
 }
 bool MainScene::onTouchBegan(Touch* touch, Event  *event)
 {
-    return true;
-}
-
-void MainScene::onTouchEnded(Touch* touch, Event  *event)
-{
+    
+    m_bTouchOn = true;
 
     auto touchLocation = touch->getLocation();
     //    touchLocation = Director::getInstance()->convertToGL(touchLocation);
     touchLocation = this->convertToNodeSpace(touchLocation);
 
-    mGameFsm->onPlayerInput( touchLocation , mHero->getPosition(), mTileSize );
+    m_ptLastTouchPosition = touchLocation;
+    m_ptHeroReference = mHero->getPosition();
 
+    mGameFsm->onPlayerInput( touchLocation , m_ptHeroReference, mTileSize );
 
+    return true;
+}
 
+void MainScene::onTouchEnded(Touch* touch, Event  *event)
+{
+    m_bTouchOn = false;
+}
 
+void MainScene::onPlayerStop()
+{
+    m_bTouchOn = false;
 }
 

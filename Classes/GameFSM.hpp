@@ -27,7 +27,15 @@ public:
     void update( float delta );
     
     void setWaitAck( bool value );
-    void onPlayerInput( Point touchLocation, Point playerPos, Size tileSize ); 
+
+    ////
+    // Handle player input
+public:
+    void onPlayerInput(const Point& touchLocation, const Point& playerPos, Size tileSize );
+    void setPlayerStopCallback(const std::function<void()>& func);
+private:
+    std::function<void()> m_fPlayerStopCallback;
+    void playerStopCallback();
 
 private:
      FSM *m_pBrain;
@@ -50,8 +58,12 @@ private:
     void loadMap(const std::string mapName );
     void spawnPlayerAction();
 
+    void interrupTouch();
+
     // Game layer state
     MainScene* mGameLayer;
+
+    bool m_bIdle;
 };
 
 #endif /* defined(__LD29__GameFSM__) */
