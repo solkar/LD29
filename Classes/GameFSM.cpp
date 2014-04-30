@@ -89,7 +89,7 @@ void GameFSM::onPlayerInput(const Point& touchLocation, const Point& playerPos, 
     m_bIdle = false;
 
     //Point diff = touchLocation - playerPos;
-    Point diff = this->mGameLayer->tileCoordForPosition( touchLocation ) + Point( 1 , 1 ) 
+    Point diff = this->mGameLayer->tileCoordForPosition( touchLocation ) //+ Point( 1 , 1 ) 
         - this->mGameLayer->tileCoordForPosition( playerPos );
     
     CCLOG("Touch tile (%f,%f)", this->mGameLayer->tileCoordForPosition( touchLocation ).x +1 ,
@@ -107,6 +107,7 @@ void GameFSM::onPlayerInput(const Point& touchLocation, const Point& playerPos, 
         return;
     }
     
+#ifdef IGNORE_DIAGONAL_INPUT
     // ignore diagonals
     if( abs( diff.x ) > 0 && abs( diff.y ) > 0)
     {
@@ -114,6 +115,18 @@ void GameFSM::onPlayerInput(const Point& touchLocation, const Point& playerPos, 
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
         return;
     }
+#else
+    // player can move only in one direction so diagonals are reduced to the
+    // axis with the bigger distance
+    if( abs( diff.x ) >= abs( diff.y ) ) // move in X axis
+    {
+        diff.y = 0;
+    }else{
+        diff.x = 0;
+    }
+#endif
+    
+    
     
     // hero only moves in one direction, one step each
     Point posUpdate = mGameLayer->getHero()->getPosition();
