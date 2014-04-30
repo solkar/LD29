@@ -68,7 +68,7 @@
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYGBgMGVAAGQ2OgDJmeChYQCfGnS7CJlHSA2p5lHbfaSYRwwAADChDcA=
+   eJxjYGBgMGFAAFMG3MAUqhYXDQP41JiSaB4hNaSaR233kWIeMQAALxUNvw==
   </data>
  </layer>
  <layer name="floor-deco" width="10" height="10">
@@ -81,7 +81,7 @@
    eJxjYCAeeCGxA0jQRw8QONAOoBIAABNPAOw=
   </data>
  </layer>
- <layer name="meta" width="10" height="10" visible="0">
+ <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
    eJxjZmBgYEbCjGh8ZMzEgB/A1GEDTESqQzePkUh1xJpHqjp8fibVPGIwAFfgAG8=
   </data>
@@ -91,7 +91,7 @@
    eJxjYKAMCFOofzADsQGwEwAkeAAq
   </data>
  </layer>
- <objectgroup name="exits" width="10" height="10" visible="0">
+ <objectgroup name="exits" width="10" height="10">
   <object name="exit" type="toSupEgo" x="192" y="0" width="48" height="48">
    <properties>
     <property name="destination" value="superEgo-level1"/>
