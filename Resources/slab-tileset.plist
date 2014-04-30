@@ -173,6 +173,84 @@
                 <key>sourceSize</key>
                 <string>{96,144}</string>
             </dict>
+            <key>t-slab-ego-brown.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{296,294},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>t-slab-ego-yellow.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{394,294},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>t-slab-id-dark-blue.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>t-slab-id-light blue.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{100,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>u-slab-up-l.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{198,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
+            <key>u-slab-up-r.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{296,440},{96,144}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{96,144}}</string>
+                <key>sourceSize</key>
+                <string>{96,144}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -181,9 +259,9 @@
             <key>realTextureFileName</key>
             <string>slab-tileset.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2ce2106f34a53743d982dbb9fee1b20e:46a6a9e744e87539f947a83555ec840d:23498510c3cf349d52dae7499633b8fe$</string>
+            <string>$TexturePacker:SmartUpdate:99d3b7775fc5ab7a91faf391602c25df:750562ad489af7ace54ae4ced94949c1:23498510c3cf349d52dae7499633b8fe$</string>
             <key>textureFileName</key>
             <string>slab-tileset.png</string>
         </dict>

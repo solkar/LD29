@@ -61,22 +61,27 @@
   </tile>
  </tileset>
  <tileset firstgid="39" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
-  <image source="slab-tileset.png" width="512" height="512"/>
+  <image source="slab-tileset.png" width="512" height="1024"/>
  </tileset>
- <tileset firstgid="54" name="door-tileset" tilewidth="192" tileheight="288">
+ <tileset firstgid="74" name="door-tileset" tilewidth="192" tileheight="288">
   <image source="door-tileset.png" width="1024" height="1024"/>
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYGBg0GRAAA0G3ECTAKaFOnUi1DEPoPtIUYcMmHGIAwC7MAq/
+   eJxjYGBgMGVAAGQ2OgDJmeChYQCfGnS7CJlHSA2p5lHbfaSYRwwAADChDcA=
+  </data>
+ </layer>
+ <layer name="floor-deco" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAPWJCpjxygQUe7BhoAAHGwAGE=
   </data>
  </layer>
  <layer name="doors" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYCAemCGxbUjQRw9gO9AOoBIAAMzwALA=
+   eJxjYCAeeCGxA0jQRw8QONAOoBIAABNPAOw=
   </data>
  </layer>
- <layer name="meta" width="10" height="10">
+ <layer name="meta" width="10" height="10" visible="0">
   <data encoding="base64" compression="zlib">
    eJxjZmBgYEbCjGh8ZMzEgB/A1GEDTESqQzePkUh1xJpHqjp8fibVPGIwAFfgAG8=
   </data>
@@ -86,7 +91,7 @@
    eJxjYKAMCFOofzADsQGwEwAkeAAq
   </data>
  </layer>
- <objectgroup name="exits" width="10" height="10">
+ <objectgroup name="exits" width="10" height="10" visible="0">
   <object name="exit" type="toSupEgo" x="192" y="0" width="48" height="48">
    <properties>
     <property name="destination" value="superEgo-level1"/>

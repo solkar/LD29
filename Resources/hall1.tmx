@@ -31,19 +31,19 @@
   </tile>
  </tileset>
  <tileset firstgid="39" name="slab-tileset" tilewidth="96" tileheight="144" spacing="2" margin="2">
-  <image source="slab-tileset.png" width="512" height="512"/>
+  <image source="slab-tileset.png" width="512" height="1024"/>
  </tileset>
- <tileset firstgid="54" name="door-tileset" tilewidth="192" tileheight="288">
+ <tileset firstgid="74" name="door-tileset" tilewidth="192" tileheight="288">
   <image source="door-tileset.png" width="1024" height="1024"/>
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAcaOAQ10TCDEg0NnXYaGqo0yRCHSFArDpqAAB4rgK5
+   eJxjYKAcmOAQN4XKmSLx8elHp7GZh43GZ54pA2HzCAFc+mkBACsJA30=
   </data>
  </layer>
  <layer name="doors" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYKAfsKGjXUMVAABGAAA9
+   eJxjYKAfCKCjXUMVAABc0ABR
   </data>
  </layer>
  <layer name="meta" width="10" height="10">
