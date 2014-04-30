@@ -172,6 +172,10 @@ void GameFSM::checkCollision( Point playerPos )
     // clear text board
     mGameLayer->clearTextBoard();
     
+    //
+    // Handle obstacles
+    //
+    
     if( mGameLayer->tileIsCollidable( tileCoord ) ){
         m_pBrain->popState();
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::initState , this ) );
@@ -246,7 +250,8 @@ void GameFSM::movePlayerAction( Point screenPosition )
     if( mGameLayer->getHero()->getNumberOfRunningActions() == 0 )
     {
 
-    CCLOG("[FSM] Move player");
+    //CCLOG("[FSM] Move player");
+    
         // Animate the player
         auto moveAction = Sequence::create(
                 MoveTo::create( PLAYER_SPEED ,screenPosition),
@@ -262,7 +267,6 @@ void GameFSM::movePlayerAction( Point screenPosition )
         CCLOG("[FSM] Move player");
     }
     
-
     //   finished
     //m_pBrain->popState();
 }

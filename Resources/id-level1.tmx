@@ -71,6 +71,36 @@
  </tileset>
  <tileset firstgid="74" name="door-tileset" tilewidth="192" tileheight="288">
   <image source="door-tileset.png" width="1024" height="1024"/>
+  <tile id="0">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="floor" width="10" height="10">
   <data encoding="base64" compression="zlib">
@@ -89,7 +119,7 @@
  </layer>
  <layer name="meta" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYGBgYMaDGaE0AxKNC6Crw2cuLvOYcJjHRIJ56OaSq46RAn/gspcQBgCImAC1
+   eJxjYGBgYMaDGaE0AxKNCyCrI4RxmceEwzwmEsxDN5dcdYxE+AeXP3DZSwgDAIxAALg=
   </data>
  </layer>
  <layer name="characters" width="10" height="10">

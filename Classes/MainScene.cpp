@@ -12,8 +12,7 @@
 #include "GameState.hpp"
 #include "Macros.h"
 
-//#define FIRST_MAP "hall1"
-#define FIRST_MAP "ego-level1"
+//#define FIRST_MAP "ego-level1"
 
 //#define FAKE_STONE // ego-l1
 
@@ -320,6 +319,14 @@ bool MainScene::tileIsCollidable( Point tile )
             return true;
         }
     }
+    
+    int dTileGid = mTileMap->getLayer("doors")->getTileGIDAt(tile);
+    if (dTileGid) {
+        auto collision = mTileMap->getPropertiesForGID(cTileGid).asValueMap()["collidable"].asString();
+        if ( collision.compare("true") == 0 ) {
+            return true;
+        }
+    }
 
     return false;
 }
@@ -422,19 +429,31 @@ bool MainScene::tileIsSwitch( Point tile )
     // detect path at Super Ego
     if( tileIsSwitch == true )
     {
+        CCLOG("[%f,%f] Switch stepped", tile.x , tile.y );
+
         if( tile == Point( 7, 8 ) 
                 && mTileMap->getProperty("name").asString().compare("superEgo-level1") == 0 )
         {
 
+            CCLOG("[%f,%f] Switch path active", tile.x , tile.y );
+            GameState::getInstance()->setSwitchPathSize( 0 );
             GameState::getInstance()->setSwitchPath( true );
         }
 
         int size = GameState::getInstance()->getSwitchPathSize( ) + 1;
         GameState::getInstance()->setSwitchPathSize( size );
+
+#ifdef SWITCH_FEEDBACK
+        // show enabled switch feedback
+        mTileMap->getLayer("floor-deco")->setTileGID( GID_SLABGREEN, tile );
+#endif
+        
     }else{
+            CCLOG("[%f,%f] Switch path corrupted", tile.x , tile.y );
 
             GameState::getInstance()->setSwitchPath( false );
             GameState::getInstance()->setSwitchPathSize( 0 );
+
     }
 
   return tileIsSwitch;
@@ -572,6 +591,7 @@ void MainScene::enableSwitchAt( Point switchTile )
         if( nonIsoCoor != switchTile )
             continue;
         
+
         // special swith at S.Ego level
         if( switchTile == Point( 5 , 4 )
                 && mTileMap->getProperty("name").asString().compare("superEgo-level1") == 0 )
@@ -600,6 +620,8 @@ void MainScene::enableSwitchAt( Point switchTile )
             }
 
         }
+
+        CCLOG("[%i,%i] Switch enabled", posx, posy);
         
         //
         // add object specified in the object
@@ -711,9 +733,6 @@ void MainScene::enableLockAt( const Point& switchTile )
          
             
             //TODO: play door open fx
-            
-            
-            
 
         }
         
@@ -775,6 +794,9 @@ void MainScene::updateSwitches( TMXLayer * layer )
        
        // change door to open
        mTileMap->getLayer("doors")->setTileGID(GID_CHAOSDOOR_L_OPEN, Point(2,3));
+       
+       mTileMap->getLayer("meta")->setTileGID(GID_EMPTY, Point(2,2) );
+
    }
 
 
