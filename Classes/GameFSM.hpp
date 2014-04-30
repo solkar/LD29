@@ -46,6 +46,7 @@ private:
     // States
     void checkCollision( Point playerPos );
     void movePlayerAction( Point screenPosition );
+    void movePlayerCompleted();
 
 
 

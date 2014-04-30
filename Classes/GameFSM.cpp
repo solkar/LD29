@@ -89,7 +89,7 @@ void GameFSM::onPlayerInput(const Point& touchLocation, const Point& playerPos, 
     m_bIdle = false;
 
     //Point diff = touchLocation - playerPos;
-    Point diff = this->mGameLayer->tileCoordForPosition( touchLocation ) //+ Point( 1 , 1 ) 
+    Point diff = this->mGameLayer->tileCoordForPosition( touchLocation ) 
         - this->mGameLayer->tileCoordForPosition( playerPos );
     
     CCLOG("Touch tile (%f,%f)", this->mGameLayer->tileCoordForPosition( touchLocation ).x +1 ,
@@ -199,6 +199,7 @@ void GameFSM::checkCollision( Point playerPos )
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::loadMap , this, destinationMap ) );
         m_pBrain->pushState( CC_CALLBACK_0( GameFSM::playerStopCallback , this ) );
         //m_pBrain->pushState( CC_CALLBACK_0( GameFSM::fadePlayerAction , this ) );
+        m_pBrain->pushState( CC_CALLBACK_0( GameFSM::movePlayerAction , this , playerPos ) );
         return;
     }
 
@@ -236,27 +237,38 @@ void GameFSM::checkCollision( Point playerPos )
 
 void GameFSM::movePlayerAction( Point screenPosition )
 {
-    CCLOG("[FSM] Move player");
 
 
     // disable new input until player reaches next tile
     //mCanWalk = false;
     
-    // Animate the player
-    auto moveAction = Sequence::create(
-                                       MoveTo::create( PLAYER_SPEED ,screenPosition),
-                                       //CallFunc::create( CC_CALLBACK_0(GameScene::heroFinishedWalking,this)),
-                                       NULL);
-    
     // Play actions
     if( mGameLayer->getHero()->getNumberOfRunningActions() == 0 )
     {
+
+    CCLOG("[FSM] Move player");
+        // Animate the player
+        auto moveAction = Sequence::create(
+                MoveTo::create( PLAYER_SPEED ,screenPosition),
+                CallFunc::create( CC_CALLBACK_0(GameFSM::movePlayerCompleted,this)),
+                NULL);
+
         mGameLayer->getHero()->runAction(moveAction);
         //mHero->setPosition( position );
+    }else{
+
+        // TODO: play walking fx
+
+        CCLOG("[FSM] Move player");
     }
     
 
     //   finished
+    //m_pBrain->popState();
+}
+
+void GameFSM::movePlayerCompleted()
+{
     m_pBrain->popState();
 }
 
