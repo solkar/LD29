@@ -1,3 +1,8 @@
 cocos2d/cocos/2d/platform/android/java/bin/
 cocos2d/cocos/2d/platform/android/java/gen/
 bin/
+cocos2d/cocos/2d/Debug.win32/
+cocos2d/cocos/audio/proj.win32/Debug.win32/
+cocos2d/cocos/editor-support/cocosbuilder/proj.win32/Debug.win32/
+cocos2d/extensions/proj.win32/Debug.win32/
+cocos2d/external/chipmunk/proj.win32/Debug.win32/
