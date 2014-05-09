@@ -7,3 +7,11 @@ cocos2d/cocos/editor-support/cocosbuilder/proj.win32/Debug.win32/
 cocos2d/extensions/proj.win32/Debug.win32/
 cocos2d/external/chipmunk/proj.win32/Debug.win32/
 proj.win32/Debug.win32/
+
+# Android
+proj.android/assets/
+proj.android/libs/armeabi/
+proj.android/obj/
+proj.android/obj/local/armeabi/
+
+
